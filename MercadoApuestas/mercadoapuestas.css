@@ -1,0 +1,220 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --color-principal: #AAFF04;
+    --color-sobra: #597c1269;
+    --color-negro: #030303;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem; 
+}
+
+
+main{
+    display: flex;
+   justify-content: space-around;
+  
+
+}
+
+
+aside{
+    width: 30rem;
+    border:  solid  var(--color-principal) 0.7rem;
+    border-radius:10px 10px 0 0 ;
+    
+
+}
+.aside_liagas h3,.aside_torneos h3,.aside_selecciones h3{
+    text-align: center;
+    background-color:var(--color-negro);
+    color: white;
+    padding: 5px;
+
+}
+
+.aside_liagas ul,.aside_torneos ul,.aside_selecciones ul{
+   list-style: none;
+  
+}
+
+.aside_liagas li,.aside_torneos li,.aside_selecciones li{
+   font-size: 1.5rem;
+   text-align: center;
+   background-color: rgb(128, 133, 133);
+   border-bottom: solid var(--color-principal) ;
+   padding: 0.5rem;
+   
+ }
+
+ .aside_liagas li:hover, .aside_torneos li:hover, .aside_selecciones li:hover {
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: var(--color-principal);
+    border-bottom: solid;
+    padding: 0.5rem;
+}
+
+
+/*inico de la lista de apuestas*/
+.lista_apuestas {
+    width: 90rem; /* 900px */
+    border: solid var(--color-principal) 0.5rem; /* 1px */
+    box-shadow: 0.9rem 0.9rem 0.9rem var(--color-sobra);
+    height: auto;
+}
+
+/*hedear de la lista*/
+.lista_apuestas_header {
+    height: 5rem; /* 50px */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3rem; /* 30px */
+    padding: 1.5rem; /* 15px */
+    border-bottom: solid 0.1rem; /* 1px */
+}
+
+.lista_apuestas_header-opcio {
+    width: 18.5rem; /* 185px */
+    height: 3rem; /* 30px */
+    border: solid 0.1rem; /* 1px */
+    display: flex;
+    padding: 0.2rem; /* 2px */
+    border-radius: 0.5rem; /* 5px */
+    justify-content: space-around;
+    font-size: 1.3rem; /* 13px */
+    align-items: center;
+}
+
+.flechaAmpliarimg {
+    width: 2rem; /* 20px */
+    height: 2rem; /* 20px */
+}
+
+.valores_header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3rem; /* 30px */
+    padding-right: 1.5rem; /* 15px */
+}
+
+.valores_header-1, .valores_header-2, .valores_header-3 {
+    display: flex;
+    width: 18.5rem; /* 185px */
+    justify-content: space-between;
+    font-size: 1.3rem; /* 13px */
+}
+
+.valores_header-1 {
+    padding-right: 3rem; /* 30px */
+}
+.valores_header-3 {
+    padding-right: 3rem; /* 30px */
+    justify-content: space-around;
+    padding-left: 1rem;
+}
+
+.apuesta {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.3rem solid #000; /* 3px */
+   
+   
+}
+
+.apuesta_equipo {
+    
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    font-size: 1.3rem; /* 13px */
+  padding-bottom: 0.5rem;
+}
+
+.equipo {
+    display: flex;
+    align-items: center;
+}
+.camisa_equipos{
+    width: 39px;
+    height: 39px;
+}
+
+.horario {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 5px */
+}
+
+.horario > button {
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem; /* 5px 10px */
+    border-radius: 2rem; /* 20px */
+    border: 0;
+    font-size: 1rem; /* 10px */
+}
+
+.apuesta_resultado {
+    
+    width: 18rem; /* 180px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem; /* 10px */
+    gap: 0.8rem; /* 8% */
+}
+
+.cuotas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(197, 197, 197);
+    border: 0.2rem solid gray; /* 2px */
+    padding: 5%;
+    font-size: 1.5rem;
+}
+#oculto{
+    display: none;
+}
+
+.apuesta_masmenos {
+    
+    width: 19rem; /* 190px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem; /* 10px */
+    gap: 0.8rem; /* 8% */
+}
+
+
+.apuesta_marcan {
+    width: 18rem; /* 180px */
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* 8% */
+}
+
+#goles {
+    background-color: white;
+    border: 0;
+}
+
+
