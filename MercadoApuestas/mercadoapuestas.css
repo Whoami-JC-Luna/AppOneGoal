@@ -16,15 +16,66 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem; 
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas: 
+        "header"
+        "section"
+        "main"
+        "footer";
+    height: 100vh;
+    
+}
+
+header{
+    background-color: var(--color-negro);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem;
+}
+.header_nav{
+    width: 50rem;
+    display: flex;
+    justify-content: space-around;
+   
+}
+.header_nav a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+.header_usuario  img{
+    width: 50px;
+}
+
+.header_usuario {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    grid-area: section;
+    height: 60rem;
+    background-image: url(/img/green-grass-cinematic-lighting-football-stadium\ 1.png);
+     background-position: center;
+     background-size: cover;
+     padding: 0;
+    color: white;
+   
 }
 
 
 main{
     display: flex;
    justify-content: space-around;
-  
-
+   grid-area: main;
 }
+  
 
 
 aside{
@@ -71,6 +122,7 @@ aside{
     border: solid var(--color-principal) 0.5rem; /* 1px */
     box-shadow: 0.9rem 0.9rem 0.9rem var(--color-sobra);
     height: auto;
+    background-color: white;
 }
 
 /*hedear de la lista*/
@@ -215,6 +267,10 @@ aside{
 #goles {
     background-color: white;
     border: 0;
+}
+
+footer {
+    grid-area: footer;
 }
 
 
