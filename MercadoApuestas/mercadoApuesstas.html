@@ -1,205 +1,505 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mercado de apuestas</title>
-    <link rel="stylesheet" href="mercadoapuestas.css" />
-  </head>
-  <body>
-
-  <main>
-
+    <title>Mercado de Apuestas | OneGoal</title>
     
+    <!-- Tu CSS principal (incluiremos al final los estilos de .lista_apuestas) -->
+    <link rel="stylesheet" href="./mercadoapuestas.css" />
 
-    <aside >
-        <div class="aside_liagas">
-            <h3>Ligas de Fútbol</h3>
-            <ul class="ligas">
-                <li>Premier League (Inglaterra)</li>
-                <li>LaLiga (España)</li>
-                <li>Bundesliga (Alemania)</li>
-                <li>Serie A (Italia)</li>
-            </ul>
-        </div>
+    <!-- CDN de Font Awesome (para los iconos) -->
+    <link 
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+</head>
+<body>
 
-        <div class="aside_torneos">
-            <h3>Torneos de Fútbol</h3>
-            <ul class="ligas">
-                <li>UEFA Champions League</li>
-                <li>Copa del Rey</li>
-                <li>Bundesliga (Alemania)</li>
-                <li>Serie A (Italia)</li>
-            </ul>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="img/OneGoalLogotipo.png" alt="OneGoal Logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link">INICIO</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">MERCADO DE APUESTAS</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">RANKING Y DESAFÍOS</a></li>
+                    <li class="nav__item"><a href="/perfilUsuario.html" class="nav__link">MI PERFIL</a></li>
+                </ul>
+                <div class="nav__buttons">
+                    <a href="perfilUsuario.html" class="button button--primary">Login</a>
+                    <a href="#" class="button button--outline">Regístrate</a>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <div class="aside_selecciones">
-            <h3>Torneos de Fútbol</h3>
-            <ul class="ligas">
-                <li>Premier League (Inglaterra)</li>
-                <li>LaLiga (España)</li>
-                <li>Bundesliga (Alemania)</li>
-                <li>Serie A (Italia)</li>
-            </ul>
-        </div>
-
-    </aside>
-
-
-
-    <section class="lista_apuestas">
-        <div class="lista_apuestas_header">
-          <div class="lista_apuestas_header-opcio">
-            <p><strong>Resultado 1x2</strong></p>
-            <img class="flechaAmpliarimg" src="./img/flechaAmpliar.png" alt="" />
-          </div>
-          <div class="lista_apuestas_header-opcio">
-            <strong>Más/Menos</strong>
-            <img class="flechaAmpliarimg" src="./img/flechaAmpliar.png" alt="" />
-          </div>
-          <div class="lista_apuestas_header-opcio">
-            <p><strong>¿Ambos marcan?</strong></p>
-            <img class="flechaAmpliarimg" src="./img/flechaAmpliar.png" alt="" />
-          </div>
-        </div>
-        <div class="valores_header">
-          <div class="valores_header-1">
-            <p>1</p>
-            <p>x</p>
-            <p>2</p>
-          </div>
-          <div class="valores_header-2">
-            <p>Goles</p>
-            <p>Mas de</p>
-            <p>Menos de</p>
-          </div>
-          <div class="valores_header-3">
-            <p>Si</p>
-            <p>No</p>
-            <p></p>
-          </div>
-        </div>
-        <div class="apuesta">
-          <div class="apuesta_equipo">
-            <span class="equipo">
-              <img src="img/Barcelona 3 (1).png" alt="escudo" />Real Madrid
-            </span>
-            <span class="equipo">
-              <img src="img/Barcelona 3.png" alt="escudo" />Barcelona
-            </span>
-            <span class="horario">
-              Hoy/21:00 <button>CREAR TU APUESTA</button>
-            </span>
-          </div>
-  
-          <div class="apuesta_resultado">
-            <div class="cuotas">6.47</div>
-            <div class="cuotas">4.80</div>
-            <div class="cuotas">1.43</div>
-          </div>
-          <div class="apuesta_masmenos">
-            <div class="cuotas" id="goles">3,5</div>
-            <div class="cuotas">2.15</div>
-            <div class="cuotas">1.60</div>
-          </div>
-          <div class="apuesta_marcan">
-            <div class="cuotas">1.66</div>
-            <div class="cuotas">2.05</div>
-          </div>
-        </div>
-  
-        <div class="apuesta">
-          <div class="apuesta_equipo">
-            <span class="equipo">
-              <img src="img/betis.png" alt="escudo" />Betis
-            </span>
-            <span class="equipo">
-              <img src="img/villareal.png" alt="escudo" />Villar
-            </span>
-            <span class="horario">
-              6/2/25 19:30 <button>CREAR TU APUESTA</button>
-            </span>
-          </div>
-  
-          <div class="apuesta_resultado">
-            <div class="cuotas">1.47</div>
-            <div class="cuotas">4.10</div>
-            <div class="cuotas">7.75</div>
-          </div>
-          <div class="apuesta_masmenos">
-            <div class="cuotas" id="goles">2,5</div>
-            <div class="cuotas">2.10</div>
-            <div class="cuotas">1.15</div>
-          </div>
-          <div class="apuesta_marcan">
-            <div class="cuotas">2.47</div>
-            <div class="cuotas">1.50</div>
-          </div>
-        </div>
-        
-        <div class="apuesta">
-          <div class="apuesta_equipo">
-              <span class="equipo">
-                  <img src="img/atletico.png" alt="escudo">Atletico de Madrid
-              </span>
-              <span class="equipo">
-                  <img src="img/sevilla.png" alt="escudo">Sevilla
-              </span>
-              <span class="horario">
-                  Mañana/21:00 <button>CREAR TU APUESTA</button>
-              </span>
-          </div>
-          
-              <div class="apuesta_resultado">
-                  <div class="cuotas">6.25</div>
-                  <div class="cuotas">4.33</div>
-                  <div class="cuotas">1.50</div>
-              </div>
-              <div class="apuesta_masmenos">
-                  <div class="cuotas" id="goles">2,5</div>
-                  <div class="cuotas">1.73</div>
-                  <div class="cuotas">2.00</div>
-              </div>
-              <div class="apuesta_marcan">
-                  <div class="cuotas">1.87</div>
-                  <div class="cuotas">1.82</div>
-              </div>
-        </div>
-  
-        <div class="apuesta">
-          <div class="apuesta_equipo">
-              <span class="equipo">
-                  <img src="img/Barcelona 3 (1).png" class="camisa_equipos" alt="escudo">Real Madrid
-              </span>
-              <span class="equipo">
-                  <img src="img/Barcelona 3.png" alt="escudo">Barcelona
-              </span>
-              <span class="horario">
-                  6/2/25 21:30  <button>CREAR TU APUESTA</button>
-              </span>
-          </div>
-          
-              <div class="apuesta_resultado">
-                  <div class="cuotas">1.73</div>
-                  <div class="cuotas">3.60</div>
-                  <div class="cuotas">1.50</div>
-              </div>
-              <div class="apuesta_masmenos">
-                  <div class="cuotas" id="goles">2,5</div>
-                  <div class="cuotas">2.20</div>
-                  <div class="cuotas">1.60</div>
-              </div>
-              <div class="apuesta_marcan">
-                  <div class="cuotas">2.15</div>
-                  <div class="cuotas">1.62</div>
-                  
-              </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">¿TE VAS A PERDER LA EMOCIÓN DE COMPETIR CON TU COMUNIDAD?</h1>
+        <p class="hero__subtitle">Vive la emoción y apuesta en vivo para no perderte ni un segundo.</p>
+        <button class="hero__cta">¡Apostar ahora!</button>
       </div>
+    </section>
 
-  </main>
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- SIDEBAR IZQUIERDA -->
+        <aside class="sidebar">
+
+          <!-- Banner en la sidebar (respetando tu banner) -->
+          <div class="sidebar-banner">
+            <img src="img/bannerAside.png" alt="Promoción especial" />
+          </div>
+
+          <!-- Ligas de Fútbol -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-shield-halved"></i> 
+                Ligas de Fútbol
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">Premier League (Inglaterra)</li>
+                  <li class="sidebar__item">LaLiga (España)</li>
+                  <li class="sidebar__item">Bundesliga (Alemania)</li>
+                  <li class="sidebar__item">Serie A (Italia)</li>
+              </ul>
+          </section>
+          <!-- Torneos de Fútbol -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-trophy"></i> 
+                Torneos de Fútbol
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">UEFA Champions League</li>
+                  <li class="sidebar__item">Copa del Rey</li>
+                  <li class="sidebar__item">FA Cup</li>
+                  <li class="sidebar__item">Supercopa</li>
+              </ul>
+          </section>
+          <!-- Selecciones Nacionales -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-flag"></i> 
+                Selecciones Nacionales
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">Mundial FIFA</li>
+                  <li class="sidebar__item">Copa América</li>
+                  <li class="sidebar__item">Eurocopa</li>
+                  <li class="sidebar__item">Liga de Naciones</li>
+              </ul>
+          </section>
+          <!-- Comunidades -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-users"></i> 
+                Comunidades
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">Foro General</li>
+                  <li class="sidebar__item">Fans del Real Madrid</li>
+                  <li class="sidebar__item">Fans del FC Barcelona</li>
+                  <li class="sidebar__item">Aficionados Sudamericanos</li>
+              </ul>
+          </section>
+          <!-- Pools / Quinielas -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-layer-group"></i> 
+                Pools de Apuestas
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">Pool Liga Inglesa</li>
+                  <li class="sidebar__item">Pool Champions</li>
+                  <li class="sidebar__item">Pool Selecciones</li>
+                  <li class="sidebar__item">Pool Femenino</li>
+              </ul>
+          </section>
+          <!-- Desafíos y Ranking -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-medal"></i>
+                Desafíos y Ranking
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">Ranking Semanal</li>
+                  <li class="sidebar__item">Ranking Mensual</li>
+                  <li class="sidebar__item">Desafío LaLiga</li>
+                  <li class="sidebar__item">Desafío de Comunidades</li>
+              </ul>
+          </section>
+          <!-- Promociones y Bonos -->
+          <section class="sidebar__section">
+              <h3 class="sidebar__title">
+                <i class="fa-solid fa-gift"></i>
+                Promociones
+              </h3>
+              <ul class="sidebar__list hidden">
+                  <li class="sidebar__item">Bono de Bienvenida</li>
+                  <li class="sidebar__item">Free Bets Semanales</li>
+                  <li class="sidebar__item">Programa de Lealtad</li>
+              </ul>
+          </section>
+        </aside>
 
 
 
-   
-  </body>
+
+
+
+
+
+
+
+
+
+<!-- LISTA_APUESTAS -->
+<section class="lista_apuestas">
+
+  <!-- BANNER (opcional) -->
+  <div class="lista_apuestas-banner">
+    <img src="img/bannerTeLoVasAPerder.png" alt="Promoción Apuestas" />
+  </div>
+
+  <!-- TOP BAR: "Competiciones Destacadas" + ligas -->
+  <div class="lista_apuestas_topbar">
+    <h2 class="lista_apuestas_title">Competiciones Destacadas</h2>
+    <div class="lista_apuestas_tabs">
+      <button class="lista_apuestas_tab active">LaLiga</button>
+      <button class="lista_apuestas_tab">Premier League</button>
+      <button class="lista_apuestas_tab">Serie A</button>
+      <button class="lista_apuestas_tab">Bundesliga</button>
+      <button class="lista_apuestas_tab">Ligue 1</button>
+      <button class="lista_apuestas_tab">LaLiga 2</button>
+    </div>
+  </div>
+
+  <!-- Cabecera con opciones (Resultado 1x2 / Más/Menos / Ambos marcan) -->
+  <div class="lista_apuestas_header">
+    <div class="lista_apuestas_header-opcio">
+      <p><strong>Resultado 1x2</strong></p>
+      <img class="flechaAmpliarimg" src="./img/flechaAmpliar.png" alt="" />
+    </div>
+    <div class="lista_apuestas_header-opcio">
+      <strong>Más/Menos</strong>
+      <img class="flechaAmpliarimg" src="./img/flechaAmpliar.png" alt="" />
+    </div>
+    <div class="lista_apuestas_header-opcio">
+      <p><strong>¿Ambos marcan?</strong></p>
+      <img class="flechaAmpliarimg" src="./img/flechaAmpliar.png" alt="" />
+    </div>
+  </div>
+
+  <!-- PARTIDO 1 -->
+  <div class="apuesta">
+    <!-- Fila de equipos -->
+    <div class="apuesta_equipo">
+      <span class="equipo">
+        <img src="img/Barcelona 3 (1).png" alt="escudo" />
+        Real Madrid
+      </span>
+      <span class="equipo">
+        <img src="img/Barcelona 3.png" alt="escudo" />
+        Barcelona
+      </span>
+      <span class="horario">
+        Hoy/21:00 
+        <button>CREAR TU APUESTA</button>
+      </span>
+    </div>
+
+    <!-- Cuotas unificadas -->
+    <div class="apuesta_cuotas">
+      <!-- 1 -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">1</span>
+        <div class="cuotas">6.47</div>
+      </div>
+      <!-- X -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">X</span>
+        <div class="cuotas">4.80</div>
+      </div>
+      <!-- 2 -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">2</span>
+        <div class="cuotas">1.43</div>
+      </div>
+      <!-- Goles -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">Goles</span>
+        <div class="cuotas" id="goles">3,5</div>
+      </div>
+      <!-- Más de -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">Más de</span>
+        <div class="cuotas">2.15</div>
+      </div>
+      <!-- Menos de -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">Menos de</span>
+        <div class="cuotas">1.60</div>
+      </div>
+      <!-- Sí -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">Sí</span>
+        <div class="cuotas">1.66</div>
+      </div>
+      <!-- No -->
+      <div class="apuesta_col">
+        <span class="apuesta_label">No</span>
+        <div class="cuotas">2.05</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTIDO 2 -->
+  <div class="apuesta">
+    <div class="apuesta_equipo">
+      <span class="equipo">
+        <img src="img/betis.png" alt="escudo" />
+        Betis
+      </span>
+      <span class="equipo">
+        <img src="img/villareal.png" alt="escudo" />
+        Villar
+      </span>
+      <span class="horario">
+        6/2/25 19:30 <button>CREAR TU APUESTA</button>
+      </span>
+    </div>
+
+    <div class="apuesta_cuotas">
+      <div class="apuesta_col">
+        <span class="apuesta_label">1</span>
+        <div class="cuotas">1.47</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">X</span>
+        <div class="cuotas">4.10</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">2</span>
+        <div class="cuotas">7.75</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Goles</span>
+        <div class="cuotas" id="goles">2,5</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Más de</span>
+        <div class="cuotas">2.10</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Menos de</span>
+        <div class="cuotas">1.15</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Sí</span>
+        <div class="cuotas">2.47</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">No</span>
+        <div class="cuotas">1.50</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTIDO 3 -->
+  <div class="apuesta">
+    <div class="apuesta_equipo">
+      <span class="equipo">
+        <img src="img/atletico.png" alt="escudo" />
+        Atletico de Madrid
+      </span>
+      <span class="equipo">
+        <img src="img/sevilla.png" alt="escudo" />
+        Sevilla
+      </span>
+      <span class="horario">
+        Mañana/21:00 <button>CREAR TU APUESTA</button>
+      </span>
+    </div>
+
+    <div class="apuesta_cuotas">
+      <div class="apuesta_col">
+        <span class="apuesta_label">1</span>
+        <div class="cuotas">6.25</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">X</span>
+        <div class="cuotas">4.33</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">2</span>
+        <div class="cuotas">1.50</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Goles</span>
+        <div class="cuotas" id="goles">2,5</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Más de</span>
+        <div class="cuotas">1.73</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Menos de</span>
+        <div class="cuotas">2.00</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Sí</span>
+        <div class="cuotas">1.87</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">No</span>
+        <div class="cuotas">1.82</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTIDO 4 -->
+  <div class="apuesta">
+    <div class="apuesta_equipo">
+      <span class="equipo">
+        <img src="img/Barcelona 3 (1).png" class="camisa_equipos" alt="escudo" />Real Madrid
+      </span>
+      <span class="equipo">
+        <img src="img/Barcelona 3.png" alt="escudo" />Barcelona
+      </span>
+      <span class="horario">
+        6/2/25 21:30 <button>CREAR TU APUESTA</button>
+      </span>
+    </div>
+
+    <div class="apuesta_cuotas">
+      <div class="apuesta_col">
+        <span class="apuesta_label">1</span>
+        <div class="cuotas">1.73</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">X</span>
+        <div class="cuotas">3.60</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">2</span>
+        <div class="cuotas">1.50</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Goles</span>
+        <div class="cuotas" id="goles">2,5</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Más de</span>
+        <div class="cuotas">2.20</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Menos de</span>
+        <div class="cuotas">1.60</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">Sí</span>
+        <div class="cuotas">2.15</div>
+      </div>
+      <div class="apuesta_col">
+        <span class="apuesta_label">No</span>
+        <div class="cuotas">1.62</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- FIN lista_apuestas -->
+
+        <!-- COLUMNA DERECHA -->
+        <aside class="sidebar-right">
+          <!-- Sección: Medios -->
+          <section class="right__section medios">
+            <h3 class="right__title">Medios</h3>
+            <div class="medios__selector">
+              <label for="medios-evento">Selecciona un evento</label>
+              <select id="medios-evento">
+                <option value="">-- Elige un evento --</option>
+                <option value="evento1">Evento 1</option>
+                <option value="evento2">Evento 2</option>
+              </select>
+              <p>Elige de la lista de eventos para ver los medios de visualización.</p>
+            </div>
+          </section>
+          <!-- Talón de apuestas -->
+          <section class="right__section talon">
+            <div class="talon__tabs">
+              <button class="talon__tab talon__tab--active">Talón de apuestas</button>
+              <button class="talon__tab">Mis apuestas</button>
+            </div>
+            <div class="talon__content">
+              <p>No hay apuestas seleccionadas</p>
+              <small>Navega por nuestro sportsbook y selecciona apuestas pulsando sobre las cuotas</small>
+            </div>
+          </section>
+          <!-- Minijuegos -->
+          <section class="right__section minijuegos">
+            <h3 class="right__title">Minijuegos</h3>
+            <div class="minijuegos__search">
+              <input type="text" placeholder="Buscar juego" />
+            </div>
+            <div class="minijuegos__grid">
+              <div class="minijuegos__item">Juego 1</div>
+              <div class="minijuegos__item">Juego 2</div>
+              <div class="minijuegos__item">Juego 3</div>
+              <div class="minijuegos__item">Juego 4</div>
+            </div>
+          </section>
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="img/logoBlanco.png" alt="OneGoal Logo">
+            </div>
+            <nav class="footer__nav">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Términos y Condiciones</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Política de Privacidad</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link"><img src="img/icons/facebook.svg" alt="Facebook"></a>
+                <a href="#" class="footer__social-link"><img src="img/icons/twitter.svg" alt="Twitter"></a>
+                <a href="#" class="footer__social-link"><img src="img/icons/instagram.svg" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 OneGoal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/MercadoApuestas/js/app3.js"></script>
+</body>
 </html>

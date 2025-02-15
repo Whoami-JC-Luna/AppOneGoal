@@ -1,0 +1,882 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* LAYOUT GENERAL */
+body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "saldo"
+        "trending"
+        "leagues"
+        "navigation"
+        "footer";
+    grid-template-rows: auto auto auto auto;
+
+    min-height: 100vh; 
+
+    /* Fondo */
+    background-image: url('/perfilUsuario/background.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    
+    padding-top: 80px;
+    margin: 0;
+    width: 100%;
+}
+
+
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 80px;
+    transition: transform 0.3s ease-in-out; /* Suaviza la animación */
+}
+
+/* Cuando haces scroll hacia abajo, el header se mueve */
+.header.scrolled {
+    transform: translateY(-100%);
+}
+
+/* Cuando subes, vuelve a su posición original */
+
+
+
+
+
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sección del balance */
+.account-balance {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.balance-text {
+    margin-right: 8px;
+    color: #555;
+}
+
+.user-balance {
+    color: black;
+    margin-right: 10px;
+}
+
+.balance-button {
+    background: #ffff00;
+    color: black;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú de navegación */
+.nav {
+    display: flex;
+    align-items: center;
+    /* background-color: #0099cc; */
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+    font-size: 1.2em;
+}
+
+.nav__item {
+    margin: 0 15px;
+}
+
+.nav__link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección de iconos de usuario */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+/* Estilo para iconos de notificaciones y mensajes */
+.icon-wrapper {
+    position: relative;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Menú de usuario */
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-menu:hover {
+    color: #0099cc
+}
+
+.user-icon {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.user-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+}
+
+.dropdown li {
+    padding: 10px;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown li a:hover {
+    background: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+/* SALDO SECCIÓN */
+/* Bloque principal */
+.header-icons {
+    grid-area: saldo;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+}
+
+/* Bloque: Saldo */
+.header-icons__balance {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-icons__balance-amount {
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.header-icons__balance-button {
+    background: #ffff00;
+    color: black;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Bloque: Iconos */
+.header-icons__icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Elemento: Icono envuelto con notificación */
+.header-icons__icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Elemento: Notificación */
+.header-icons__icon-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ffff00;
+    color: black;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Elemento: Icono */
+.header-icons__icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* TRENDING */
+.trending {
+    grid-area: trending;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 80px;
+}
+
+.trending__title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 40px;
+}
+
+.trending__banner {
+    position: relative;
+    margin-top: 20px;
+}
+
+.trending__image {
+    width: 70%;
+    border-radius: 10px;
+}
+
+.trending__bet {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    background: #aaff00;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* LEAGUES */
+.leagues {
+    grid-area: leagues;
+    text-align: center;
+    padding: 50px 20px;
+    /* background-color: #f7f7f7; */
+    border-radius: 60px 60px 0 0; /* Solo arriba redondeado */
+
+}
+
+.leagues__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leagues__title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.leagues__view-all {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+.leagues__filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.leagues__filter {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.leagues__filter--active {
+    color: #aaff00;
+}
+
+/* PARTIDO DIRECTO */
+/* CONTENEDOR PRINCIPAL */
+.leagues__match {
+    text-align: center;
+    margin: 4em 0;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 3em 1.5em;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 4em auto;
+}
+
+/* TIEMPO Y ESTADO DEL PARTIDO */
+.leagues__time {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.leagues__status {
+    background: #ffcc00;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.leagues__timer {
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* EQUIPOS Y MARCADOR */
+.leagues__teams {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    background: #f5f5f5;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leagues__logo {
+    width: 80px;
+    height: 80px;
+}
+
+.team-name {
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* MARCADOR */
+.leagues__score {
+    font-size: 2rem;
+    font-weight: bold;
+    background: #222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* USUARIOS APOSTANDO */
+.leagues__users {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.leagues__users-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.leagues__avatars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.leagues__user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.leagues__user:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* TORNEOS */
+.torneos {
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.torneos__header {
+    margin: 2em;
+}
+
+.torneos__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1em;
+}
+
+.torneos__subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Contenedor de torneos */
+.torneos__container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Cada torneo es un botón redondo */
+.torneo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 120px; /* Tamaño del círculo */
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    position: relative;
+}
+
+/* Imagen dentro del círculo */
+.torneo img {
+    width: 50%; /* Ajusta la imagen al círculo */
+    height: auto;
+    object-fit: cover;
+}
+
+/* Efecto hover */
+.torneo:hover {
+    background-color: #e3ffcc93;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+/* Comunidad chat */
+/* Estilos generales del chat */
+.community-chat {
+    text-align: center;
+    padding: 30px 20px;
+    /* background-color: #0099cc; */
+}
+
+.community-chat__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.chat__usuarios{
+    margin: 40px 0 40px 0px;
+}
+.chat__usuarios img{
+    width: 80px;
+    height: 70px;
+}
+
+.chat__box {
+    background: white;
+    padding: 80px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Estilos de los mensajes */
+.chat__message {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Caja de entrada */
+.chat__input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.chat__input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.chat__send {
+    background: #00bfff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat__send:hover {
+    background: #0099cc;
+}
+
+
+
+
+
+
+
+
+
+
+/* COMUNItty sección */
+/* Sección de comunidades */
+.community-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.community-section__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de las comunidades */
+.community-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de comunidad */
+.community-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Título de la comunidad */
+.community-card__title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Usuarios conectados */
+.community-card__users {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Botón de unirse */
+.community-card__join {
+    background: #00bfff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.community-card__join:hover {
+    background: #0099cc;
+}
+
+
+
+
+
+
+
+/* Banner Final */
+
+
+.banner_end {
+    grid-area: banner_end;
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100%;  
+    margin: 15em auto;           /* Asegura que ocupe toda la altura disponible */
+}
+
+.banner_end__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4em;
+    align-items: center;
+    width: 100%;
+}
+
+.banner_end__container img {
+    max-width: 100%;  /* Ajusta la imagen al ancho disponible */
+    height: auto;     /* Mantiene la proporción */
+}
+
+.banner_end__container p {
+    font-size: 1.5em;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* NAVIGATION - Oculta por defecto */
+.navigation {
+    display: none; /* Oculto en pantallas grandes */
+    width: 100%;
+    background: black;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* Elementos de navegación */
+.navigation__item {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 0 0 20px 20px; 
+    cursor: pointer;
+}
+
+.navigation__item--active {
+    color: #aaff00;
+}
+
+
+
+
+
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer__logo img {
+    height: 50px;
+}
+
+.footer__nav {
+    margin: 20px 0;
+}
+
+.footer__list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer__item {
+    display: inline;
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.footer__link:hover {
+    color: #aaff00;
+}
+
+.footer__social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer__social-link img {
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+.footer__social-link img:hover {
+    transform: scale(1.1);
+}
+
+.footer__bottom {
+    border-top: 1px solid #444;
+    width: 100%;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "trending"
+            "leagues"
+            "navigation";
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .navigation {
+        display: flex; 
+        justify-content: space-evenly;
+    }
+}
+
+
+
+
+
+
