@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap');
+
+:root {
+    --color-verde: #B1F426;
+    --letra: 'Carlito', sans-serif;
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+    background-color: white;
+}
+
+
+.content {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    /* padding: 2em 0; */
+    grid-area: "content";
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    width: 70%;
+    max-width: 500px;
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form__label {
+    font-family: var(--letra);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.form__input {
+    font-family: var(--letra);
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 2px solid var(--color-verde);
+}
+
+.form__input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.form__checkbox-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em;
+    font-family: var(--letra);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.form__checkbox-label {
+    grid-column: 2 / -1;
+}
+
+.form__submit {
+    font-family: var(--letra);
+    border: 5px solid black;
+    background-color: var(--color-verde);
+    padding: 0.7em;
+    font-weight: bold;
+    font-size: 1.3em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: font-size 0.2s ease;
+}
+
+.form__submit:hover {
+    font-size: 1.5em;
+}
+
+.form__link {
+    font-family: var(--letra);
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.form__link:hover {
+    color: var(--color-verde);
+}
