@@ -7,6 +7,7 @@
     --color-principal: #AAFF04;
     --color-sobra: #597c1269;
     --color-negro: #030303;
+    --color-blanco: #ffffff;
 }
 
 html {
@@ -26,7 +27,7 @@ body {
     height: 100vh;
     
 }
-
+/********INICIO DEL HEADER******/
 header{
     background-color: var(--color-negro);
     display: flex;
@@ -46,6 +47,11 @@ header{
     margin-left: 1rem;
 }
 
+.header_nav a:hover{
+color: var(--color-principal);
+
+}
+
 .header_usuario  img{
     width: 50px;
 }
@@ -58,65 +64,154 @@ header{
     gap: 2rem;
 }
 
+/*****INICO DEL  SECTION*****/
 section {
     grid-area: section;
     height: 60rem;
-    background-image: url(/img/green-grass-cinematic-lighting-football-stadium\ 1.png);
-     background-position: center;
-     background-size: cover;
-     padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url(/img/green-grass-cinematic-lighting-football-stadium%201.png);
+    background-position: center;
+    background-size: cover;
+    padding: 0;
     color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.oferta{
+    width: 30rem;
+    background: linear-gradient(to bottom, rgba(82, 211, 133, 0.8), rgba(26, 71, 42, 0.4)); /* Gradiente de arriba a abajo con transparencia */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.oferta h1{
+   font-size: 4rem;
    
 }
+
+.oferta button{
+    color: var(--color-negro);
+    padding: 5px;
+    background-color: var(--color-principal);
+    border-radius: 5px;
+    width: 17rem;
+    font-weight: bold;
+ 
+ }
+
+ 
+.oferta button:hover{
+  font-size: 1.7rem;
+ 
+ }
+
+
+ .section_titulo {
+    width: 90rem;
+    font-size: 5rem;
+    text-align: center;
+    white-space: pre-line;
+    line-height: 7rem;
+
+}
+
+
+ .section_img{
+    width: 2rem;
+    height: 2rem;
+ }
+
+ /*****INICIO DEL MAIN*****/
 
 
 main{
     display: flex;
    justify-content: space-around;
    grid-area: main;
+   margin-top: 20rem;
+   
 }
   
 
-
+ /*****INICIO DEL ASIDE*****/
 aside{
     width: 30rem;
     border:  solid  var(--color-principal) 0.7rem;
     border-radius:10px 10px 0 0 ;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
     
 
 }
-.aside_liagas h3,.aside_torneos h3,.aside_selecciones h3{
+.aside_ligas{
+    height: 10rem;
+  
+    
+}
+
+.aside_ligas h3,.aside_pools{
     text-align: center;
     background-color:var(--color-negro);
     color: white;
     padding: 5px;
 
 }
-
-.aside_liagas ul,.aside_torneos ul,.aside_selecciones ul{
-   list-style: none;
-  
+.aside_ligas_logos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    height: 100%;
 }
 
-.aside_liagas li,.aside_torneos li,.aside_selecciones li{
-   font-size: 1.5rem;
-   text-align: center;
-   background-color: rgb(128, 133, 133);
-   border-bottom: solid var(--color-principal) ;
-   padding: 0.5rem;
-   
- }
+.aside_ligas_logos>button{
+    background-color: rgb(194, 191, 191);
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    padding: 1rem;
+    
+    
+    
+}
+.aside_ligas_logos>button:hover{
+  background-color: var(--color-principal);
+    
+}
+.aside_ligas_logos>button>img{
+    width: 7rem;
+    height: 7rem;
 
- .aside_liagas li:hover, .aside_torneos li:hover, .aside_selecciones li:hover {
-    font-size: 2.5rem;
-    text-align: center;
-    background-color: var(--color-principal);
-    border-bottom: solid;
-    padding: 0.5rem;
 }
 
 
-/*inico de la lista de apuestas*/
+
+
+/*****INICO DE PARTIDO DIRECTO*****/
+
+
+.partido_directo{
+    border: solid ;
+    width: 30rem;
+}
+
+.partido_directo_header{
+    background-color: green;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+/*****INICO DEL LA  TABLA APUESTAS *****/
 .lista_apuestas {
     width: 90rem; /* 900px */
     border: solid var(--color-principal) 0.5rem; /* 1px */
@@ -125,7 +220,7 @@ aside{
     background-color: white;
 }
 
-/*hedear de la lista*/
+
 .lista_apuestas_header {
     height: 5rem; /* 50px */
     display: flex;
@@ -159,6 +254,7 @@ aside{
     align-items: center;
     gap: 3rem; /* 30px */
     padding-right: 1.5rem; /* 15px */
+    margin-top: 0.5rem;
 }
 
 .valores_header-1, .valores_header-2, .valores_header-3 {
@@ -241,9 +337,6 @@ aside{
     padding: 5%;
     font-size: 1.5rem;
 }
-#oculto{
-    display: none;
-}
 
 .apuesta_masmenos {
     
@@ -271,6 +364,59 @@ aside{
 
 footer {
     grid-area: footer;
+    background-color: var(--color-negro);
+    margin-top: 5rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-around;
+
+    
 }
 
+.footer_nav{
+   width: 40rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: 6rem;
+  
+}
+
+.footer_nav a{
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
+.footer_nav a:hover{
+    text-decoration: none;
+    color: var(--color-principal);
+}
+
+.footer_link_logos{
+    width: 50rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.footer_link_logos-youtube,.footer_link_logos-link
+,.footer_link_logos-insta{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  
+}
+.footer_link_logos-link img{
+    border-radius: 50%;
+}
+
+
+.footer_link_logos-youtube img,
+.footer_link_logos-link img,.footer_link_logos-insta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
