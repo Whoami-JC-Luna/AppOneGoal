@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap');
 
-:root{
+:root {
     --color-verde: #B1F426;
     --letra: 'Carlito', sans-serif;
     color: black;
@@ -13,76 +13,56 @@
 }
 
 html {
-    height: auto;
+    height: 100%;
     width: 100%;
 }
 
-.page {
+body{
     height: auto;
     width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
     background-color: white;
 }
 
-.header {
-    width: 100%;
-    height: auto;
-    min-height: 10vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    background-color: var(--color-verde);
-}
-
-.header__logo {
-}
-
-.header__title {
-    width: 100%;
-    text-align: center;
-    font-family: var(--letra);
-    font-weight: bold;
-    font-size: 2.5em;
-}
 
 .content {
-    width: 100%;
-    height: auto;
-    min-height: 90vh;
-    display: flex;
-    justify-content: start;
+    display: grid;
+    justify-items: center;
     align-items: center;
-    flex-direction: column;
+    /* padding: 2em 0; */
+    grid-area: "content";
 }
 
 .form {
-    margin-top: 5%;
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1em;
+    width: 70%;
+    max-width: 500px;
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form__label {
     font-family: var(--letra);
     font-weight: bold;
     font-size: 1.3em;
-    margin: 0.1em;
-    width: 50%;
 }
 
 .form__input {
     font-family: var(--letra);
     font-weight: bold;
     font-size: 1.3em;
-    margin: 0.4em;
-    width: 50%;
     padding: 0.5em;
     border-radius: 0.5em;
-    border: 5px solid var(--color-verde);
+    border: 2px solid var(--color-verde);
 }
 
 .form__input[type="checkbox"] {
@@ -90,49 +70,44 @@ html {
     height: 18px;
 }
 
+.form__checkbox-group {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em;
+    font-family: var(--letra);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.form__checkbox-label {
+    grid-column: 2 / -1;
+}
+
 .form__submit {
     font-family: var(--letra);
     border: 5px solid black;
     background-color: var(--color-verde);
-    width: 50%;
-    padding: 0.5em;
+    padding: 0.7em;
+    font-weight: bold;
+    font-size: 1.3em;
     border-radius: 0.5em;
-    font-weight: bold;
-    font-size: 1.3em;
+    cursor: pointer;
+    transition: font-size 0.2s ease;
 }
 
-.form__checkbox-group {
-    font-family: var(--letra);
-    font-weight: bold;
-    font-size: 1.3em;
-    margin: 0.1em;
-    width: 50%;
-}
-
-.form__checkbox-label {
-}
-
-.form__input:focus {
-    border: 7px solid var(--color-verde);
-    outline: none;
-    padding: 1%;
-}
 .form__submit:hover {
     font-size: 1.5em;
 }
-.form__link{
+
+.form__link {
     font-family: var(--letra);
     font-weight: bold;
     font-size: 1.3em;
-    margin: 0.1em;
-    width: 50%;
     text-align: center;
+    text-decoration: none;
+    color: black;
 }
-.form__span{
-    font-family: var(--letra);
-    font-weight: bold;
-    font-size: 1em;
-    margin: 0.1em;
-    width: 50%;
-    text-align: center;
+
+.form__link:hover {
+    color: var(--color-verde);
 }
