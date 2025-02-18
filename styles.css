@@ -652,6 +652,7 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
+    
 }
 
 .rrss p {
@@ -696,6 +697,13 @@ body {
     transform: scale(1.1);
 }
 
+
+
+/* ICONOS */
+.button--social i {
+    font-size: 24px; /* Ajusta el tamaño */
+    color: #75d33e; /* Cambia el color si es necesario */
+}
 
 
 
