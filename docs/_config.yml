@@ -1,9 +1,6 @@
-
-remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
-
 title: "App ONEGOAL"
 description: "Página informativa del repositorio"
-
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 
 # Welcome to Jekyll!
 #
