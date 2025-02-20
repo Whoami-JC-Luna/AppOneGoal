@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 
 title: "App ONEGOAL"
 description: "Página informativa del repositorio"
 
-=======
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -24,7 +24,7 @@ description: "Página informativa del repositorio"
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
->>>>>>> ba4e3f7 (Config for GitHUb pages)
+
 
 title: Your awesome title
 email: your-email@example.com
