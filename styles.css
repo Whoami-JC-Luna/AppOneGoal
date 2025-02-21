@@ -178,7 +178,12 @@ body {
     font-weight: bold;
     font-size: 1.2em;
     text-align: center;
-    margin-top: 4em;
+    margin: 4em auto;
+}
+
+.hero__cta:hover {
+    background: #d3d3d3;
+    color: black;
 }
 
 /* Contenedor de la imagen (derecha) */
@@ -356,13 +361,17 @@ body {
 
 .torneo__link {
     font-weight: bold;
-    color: red;
+    color: rgb(34, 119, 39);
     text-decoration: none;
+    font-size: 20px;
 }
 
 
 
-
+.torneo__link:hover {
+    color: rgb(66, 80, 67);
+    text-decoration: underline;
+}
 
 
 
