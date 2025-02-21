@@ -23,11 +23,11 @@ body {
         "footer";
     grid-template-rows: auto 100vh auto auto auto;
 
-    background-image: url('/img/content/background.png'); /* Reemplaza con la ruta real */
-    background-size:  100%;; /* Ajusta la imagen para que cubra toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-repeat:no-repeat; /* Evita que la imagen se repita */
-    background-attachment:inherit; /* Mantiene la imagen fija al hacer scroll */
+    background-image: url('img/content/background.png'); 
+    background-size:  100%;
+    background-position: center;
+    background-repeat:no-repeat; 
+    background-attachment:inherit;
 
 
 
@@ -222,7 +222,7 @@ body {
     position: relative;
    
    
-    background-image: url('/img/elementosGraficos/bannermedium.png'); /* Reemplaza con la ruta real */
+    background-image: url('img/elementosGraficos/bannermedium.png'); /* Reemplaza con la ruta real */
     background-size:  100%;; /* Ajusta la imagen para que cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     background-repeat: repeat; /* Evita que la imagen se repita */
