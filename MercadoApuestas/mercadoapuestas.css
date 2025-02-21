@@ -1,7 +1,18 @@
+
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/fonts/impact.ttf') format('Impact');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'MiFuente', sans-serif;
+
   }
 
   :root {

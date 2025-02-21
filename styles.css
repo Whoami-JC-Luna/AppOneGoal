@@ -1,9 +1,18 @@
-/* RESET */
+
+
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/fonts/impact.ttf') format('Impact');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: 'MiFuente', sans-serif;
 }
 
 /* LAYOUT GENERAL */
