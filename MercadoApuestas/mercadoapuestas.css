@@ -149,10 +149,11 @@
   .hero__cta:hover {
     transform: translateY(-3px);
   }
-  
-  /* =========================
-     MAIN: 3 COLUMNAS
-  ========================= */
+
+
+
+
+   /*  MAIN: 3 COLUMNAS */
   .main {
     grid-area: main;
     display: grid;
@@ -199,6 +200,13 @@
     color: #555;
     width: auto;
   }
+
+  .sidebar__title:hover {
+    background-color: #365c26;
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+    cursor: pointer;
+    padding: 10px;
+  }
   .sidebar__list {
     list-style: none;
     margin: 0;
@@ -218,7 +226,8 @@
     border-top: none;
   }
   .sidebar__item:hover {
-    background-color: #f7f7f7;
+    background-color: #5e5f5b;
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
   }
   
   /* SIDEBAR DERECHA */
