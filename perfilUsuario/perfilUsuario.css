@@ -16,7 +16,7 @@ body {
         "leagues"
         "navigation"
         "footer";
-    grid-template-rows: auto auto auto auto auto ;
+    grid-template-rows: auto auto auto auto 1fr auto ;
 
     min-height: 100vh; 
 
@@ -777,6 +777,39 @@ body {
 }
 
 
+
+
+/* ------------------ */
+
+
+/* ------------------------- */
+
+
+
+.button--social img {
+    width: 35px; 
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.button--social img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* ICONOS */
+.button--social i {
+    font-size: 24px; 
+    color: #75d33e; 
+}
+.button--social i:hover {
+    color: var(--color-blanco);
+}
+
+
+
+/* -------------------------- */
 
 
 

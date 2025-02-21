@@ -2,6 +2,8 @@
 
 :root {
     --color-verde: #B1F426;
+    --color-blanco: white;
+
     --letra: 'Carlito', sans-serif;
     color: black;
 }
@@ -10,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 html {
@@ -178,6 +181,35 @@ body{
 .form__link:hover {
     color: var(--color-verde);
 }
+
+
+
+/* ------------------------------- */
+
+.button--social img {
+    width: 35px; 
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.button--social img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* ICONOS */
+.button--social i {
+    font-size: 24px; 
+    color: #75d33e; 
+}
+.button--social i:hover {
+    color: var(--color-blanco);
+}
+
+
+
+
 
 
 /* FOOTER */
