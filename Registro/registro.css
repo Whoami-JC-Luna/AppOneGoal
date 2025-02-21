@@ -164,8 +164,7 @@ body {
     width: 50%;
 }
 
-.form__checkbox-label {
-}
+
 
 .form__input:focus {
     border: 7px solid var(--color-verde);
