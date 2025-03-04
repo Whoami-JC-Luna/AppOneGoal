@@ -8,14 +8,12 @@
     color: black;
 }
 
-
 @font-face {
     font-family: 'MiFuente';
     src: url('/fonts/impact.ttf') format('Impact');
     font-weight: normal;
     font-style: normal;
 }
-
 
 * {
     margin: 0;
@@ -24,28 +22,22 @@
     font-family: 'MiFuente', sans-serif;
 }
 
-html {
+html, body {
     height: 100%;
-    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-body{
-    height: auto;
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto 80vh auto;
-    grid-template-areas: 
-    "header"
-    "content"
-    "footer";
-    background-color: white;
+body {
+    display: flex;
+    flex-direction: column;
 }
 
-/* HEADER */
 .header {
-    grid-area: header;
-    padding: 20px 20px;
-    
+    flex: 0 1 auto;
+    padding: 20px;
 }
 
 .header__container {
@@ -103,30 +95,22 @@ body{
     color: #000000;
 }
 
-
-
-
-
-
-/* CONTENIDO */
 .content {
-    display: grid;
-    justify-items: center;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    /* padding: 2em 0; */
-    grid-area: "content";
 }
 
 .form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
     width: 70%;
     max-width: 500px;
     background-color: white;
     padding: 2em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .form__label {
@@ -142,6 +126,11 @@ body{
     padding: 0.5em;
     border-radius: 0.5em;
     border: 2px solid var(--color-verde);
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.form__input:hover {
+    border-color: #74a700;
 }
 
 .form__input[type="checkbox"] {
@@ -171,12 +160,12 @@ body{
     font-size: 1.3em;
     border-radius: 0.5em;
     cursor: pointer;
-    transition: font-size 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .form__submit:hover {
-    font-size: 1.5em;
-    color: rgb(53, 105, 63);
+    font-size: 1.4em;
+    background-color: #74a700; 
 }
 
 .form__link {
@@ -192,10 +181,6 @@ body{
     color: var(--color-verde);
 }
 
-
-
-/* ------------------------------- */
-
 .button--social img {
     width: 35px; 
     height: auto;
@@ -206,9 +191,6 @@ body{
     transform: scale(1.1);
 }
 
-
-
-/* ICONOS */
 .button--social i {
     font-size: 24px; 
     color: #75d33e; 
@@ -217,20 +199,11 @@ body{
     color: var(--color-blanco);
 }
 
-
-
-
-
-
-/* FOOTER */
 .footer {
-    grid-area: footer;
+    flex: 0 1 auto;
     background: rgb(0, 0, 0);
     color: white;
     padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 
