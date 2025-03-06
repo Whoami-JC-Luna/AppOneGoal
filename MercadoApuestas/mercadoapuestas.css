@@ -56,7 +56,136 @@
     grid-area: header;
     padding: 20px 80px;
     background-color: black;
+
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    z-index: 9000;
   }
+
+
+
+  .header.scrolled {
+    transform: translateY(-15px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header.encajado {
+    transform: translateY(0);
+}
+
+/* Animación para secciones */
+section, .hero, .torneos, .section_banner, .section2, .section3, .banner_end, .Contactanos_rrss, .footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+
+/* ------- CHAT IA -------- */
+.chat-ia {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.chat-ia img {
+  width: 50px;
+  height: 50px;
+}
+
+.chat-ia:hover {
+  transform: scale(1.1);
+}
+
+/* ------- IA CHAT ------- */
+.chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* HEADER DEL CHAT */
+.chat-header {
+  background: #aaff00;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* CONTENIDO DEL CHAT */
+.chat-content {
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* INPUT DEL CHAT */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+.chat-input button {
+  background: #aaff00;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+
+/* ------------------------- */
+
+
+  
   .header__container {
     display: flex;
     justify-content: space-between;
