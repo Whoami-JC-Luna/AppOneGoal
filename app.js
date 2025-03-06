@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // IA - V1
-
 document.addEventListener("DOMContentLoaded", function () {
     const chatIcon = document.getElementById("chatIcon");
     const chatBox = document.getElementById("chatBox");

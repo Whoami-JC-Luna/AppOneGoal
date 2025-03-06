@@ -51,3 +51,35 @@ document.addEventListener("DOMContentLoaded", function () {
     closeChat.addEventListener("click", function () {
         chatBox.style.display = "none"; // Oculta el chat
     });
+
+
+
+    //ASIDE
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const sidebarTitles = document.querySelectorAll(".sidebar__title");
+    
+        sidebarTitles.forEach(title => {
+            title.addEventListener("click", function () {
+                const subMenu = this.nextElementSibling;
+    
+                if (subMenu.classList.contains("show")) {
+                    subMenu.style.transition = "max-height 0.4s ease, opacity 0.4s ease, transform 0.3s ease";
+                    subMenu.style.opacity = "0";
+                    subMenu.style.transform = "scaleY(0)";
+                    subMenu.style.maxHeight = "0px";
+                    setTimeout(() => {
+                        subMenu.classList.remove("show");
+                    }, 400);
+                } else {
+                    subMenu.classList.add("show");
+                    subMenu.style.transition = "max-height 0.4s ease, opacity 0.4s ease, transform 0.3s ease";
+                    subMenu.style.opacity = "1";
+                    subMenu.style.transform = "scaleY(1)";
+                    subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+                }
+            });
+        });
+    });
+    
+    

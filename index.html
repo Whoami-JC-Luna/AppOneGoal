@@ -7,31 +7,36 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body>
 
+
 <!-- ICONO DEL CHAT IA -->
-<div class="chat-ia">
-    <img src="img/ia/balon.png" alt="Chat IA" id="chatIcon">
+<div id="chatIcon" class="fixed bottom-5 right-5 w-14 h-14 bg-white rounded-full shadow-md justify-center items-center cursor-pointer transition-transform duration-300 hover:scale-110 z-[1000]">
+    <img src="img/ia/balon.png" alt="Chat IA" class="w-12 h-12">
 </div>
 
 <!-- CONTENEDOR DEL CHAT -->
-<div class="chat-box" id="chatBox">
-    <div class="chat-header">
-        <span>Chat IA</span>
-        <button id="closeChat">&times;</button>
+<div id="chatBox" class="fixed bottom-[90px] right-5 w-96 h-56 bg-white rounded-lg shadow-2xl hidden flex-col overflow-hidden z-[1000]">
+    <!-- HEADER DEL CHAT -->
+    <div class="bg-lime-400 p-3 flex justify-between items-center font-bold">
+        <p class="text-lg ml-2 w-full text-center">Chat IA</p>
+        <button id="closeChat" class="text-2xl font-bold cursor-pointer">&times;</button>
     </div>
-    <div class="chat-content">
-        <p>Hola, soy la IA de OneGoal. ¿En qué puedo ayudarte?</p>
-    </div>
-    <div class="chat-input">
-        <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
-        <button id="sendChat">Enviar</button>
-    </div>
+
+    <!-- CONTENIDO DEL CHAT -->
+<div class="p-4 h-2/3 flex overflow-y-auto">
+    <p class="text-left">Hola, soy la IA de OneGoal. <br> ¿En qué puedo ayudarte?</p>
 </div>
 
+    <!-- INPUT DEL CHAT -->
+    <div class="flex p-4 border-t border-gray-300">
+        <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." class="flex-1 p-2 border-none outline-none text-base ">
+        <button id="sendChat" class="bg-lime-400 border-none px-4 py-2 text-base font-semibold cursor-pointer h-12">Enviar</button>
+    </div>
+</div>
 
 
 
