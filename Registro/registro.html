@@ -7,11 +7,10 @@
     <link rel="icon" href="./img/pelota.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-
-
     <title>Registro</title>
 </head>
 <body>
+    
     <!-- HEADER -->
     <header class="header">
         <div class="header__container">
@@ -19,22 +18,24 @@
                 <img src="img/logoBlanco.png" alt="OneGoal Logo">
             </div>
             <nav class="nav">
+                <!-- Botón de menú en dispositivos pequeños -->
+                <div class="nav__toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!-- Lista de navegación -->
                 <ul class="nav__list">
                     <li class="nav__item"><a href="../index.html" class="nav__link">INICIO</a></li>
                     <li class="nav__item"><a href="../MercadoApuestas/mercadoApuesstas.html" class="nav__link">MERCADO DE APUESTAS</a></li>
-                    <li class="nav__item"><a href="../perfilUsuario/perfilUsuario.html" class="nav__link">MI PERFIL</a></li>
-                    
-
+                   
                 </ul>
+                <!-- Botones de login y registro -->
                 <div class="nav__buttons">
-                    <a href="iniciarsesion.html" class="button button--primary">Login</a>
-                    <a href="registro.html" class="button button--outline">Regístrate</a>
+                    <a href="./iniciarsesion.html" class="button button--primary">Login</a>
+                    <a href="./registro.html" class="button button--outline">Regístrate</a>
                 </div>
             </nav>
         </div>
     </header>
-
-
 
     <!-- CONTENIDO -->
     <div class="content">
@@ -59,10 +60,15 @@
             <div class="form__checkbox-group">
                 <input type="checkbox" value="aceptar" class="form__checkbox" required>
                 <span class="form__checkbox-label">Acepto recibir noticias vía email</span>
+                <div>¿Ya tienes cuenta?<a class="form__link" href="./iniciarsesion.html" class="nav__link"> Iniciar Sesion</a></div>
             </div>
 
             <input type="submit" value="Registrarse" class="form__submit">
         </form>
+
+        <!-- Burbujas -->
+        <div class="bubbles">
+        </div>
     </div>
 
 
@@ -72,7 +78,6 @@
             <div class="footer__logo">
                 <img src="img/logo.png" alt="OneGoal Logo">
             </div>
-
             <nav class="footer__nav">
                 <ul class="footer__list">
                     <li class="footer__item"><a href="#" class="footer__link">Términos y Condiciones</a></li>
@@ -93,7 +98,61 @@
         </div>
     </footer>
 
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.nav__toggle');
+            const menuList = document.querySelector('.nav__list');
+            const content = document.querySelector('.content');  
+
+            
+            if (menuToggle && menuList && content) {
+                menuToggle.addEventListener('click', () => {
+                    menuList.classList.toggle('active');  
+
+                    
+                    if (menuList.classList.contains('active')) {
+                        content.classList.add('menu-active');
+                    } else {
+                        content.classList.remove('menu-active');
+                    }
+                });
+            }
+        });
+
+        //BURBUJAS
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const bubblesContainer = document.querySelector(".bubbles");
+
+    function createBubble() {
+        const bubble = document.createElement("img"); 
+        bubble.src = "./img/pelota.png";
+
+        const size = Math.random() * 50 + 30; 
+        const leftPosition = Math.random() * 100; 
+        const animationDuration = Math.random() * 5 + 5; 
+        const delay = Math.random() * 3; 
+
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${leftPosition}%`;
+        bubble.style.bottom = `-10px`;
+        bubble.style.position = "absolute";
+        bubble.style.animation = `bubble-animation ${animationDuration}s infinite ease-in-out ${delay}s`;
+
+        bubblesContainer.appendChild(bubble);
+    }
+
+    const numberOfBubbles = Math.floor(Math.random() * 10 + 5);
+    for (let i = 0; i < numberOfBubbles; i++) {
+        createBubble();
+    }
+});
 
 
+
+
+    </script>
 </body>
 </html>

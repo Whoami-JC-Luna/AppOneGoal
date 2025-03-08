@@ -10,18 +10,19 @@
     <title>Iniciar Sesion</title>
 </head>
 <body>
-    
-    <!-- HEADER -->
+    <div class="bubbles-container"></div>
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
                 <img src="img/logoBlanco.png" alt="OneGoal Logo">
             </div>
             <nav class="nav">
+                <div class="nav__toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
                 <ul class="nav__list">
                     <li class="nav__item"><a href="../index.html" class="nav__link">INICIO</a></li>
-                    <li class="nav__item"><a href="../MercadoApuestas/mercadoApuesstas.html" class="nav__link">MERCADO DE APUESTAS</a></li>
-                    <!-- <li class="nav__item"><a href="perfilUsuario.html" class="nav__link">Mi Perfil</a></li> -->
+                    <li class="nav__item"><a href="../MercadoApuestas/mercadoApuesstas.html" class="nav__link">MERCADO DE APUESTAS</a></li>  
                 </ul>
                 <div class="nav__buttons">
                     <a href="iniciarsesion.html" class="button button--primary">Login</a>
@@ -30,9 +31,6 @@
             </nav>
         </div>
     </header>
-
-
-    <!-- CONTENIDO -->
     <div class="content">
         <form class="form">
             <label for="email" class="form__label">Email:</label>
@@ -47,20 +45,17 @@
             </div>
             <a href="#" class="form__link">¿Olvidaste tu contraseña?</a>
             <a href="registro.html" class="form__link">¿No tienes cuenta? Registrate Gratis</a>
-
             <input type="submit" value="Iniciar Sesion" class="form__submit">
         </form>
+        <!-- Burbujas -->
+        <div class="bubbles">
+        </div>
     </div>
-
-
-
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__logo">
                 <img src="img/logo.png" alt="OneGoal Logo">
             </div>
-
             <nav class="footer__nav">
                 <ul class="footer__list">
                     <li class="footer__item"><a href="#" class="footer__link">Términos y Condiciones</a></li>
@@ -68,24 +63,60 @@
                     <li class="footer__item"><a href="#" class="footer__link">Contacto</a></li>
                 </ul>
             </nav>
-
             <div class="footer__social">
                 <a href="#" class="button button--social"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="button button--social"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#" class="button button--social"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
-
         <div class="footer__bottom">
             <p>&copy; 2024 OneGoal. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.nav__toggle');
+            const menuList = document.querySelector('.nav__list');
+            const content = document.querySelector('.content');  
+            if (menuToggle && menuList && content) {
+                menuToggle.addEventListener('click', () => {
+                    menuList.classList.toggle('active');  
+                    content.classList.toggle('menu-active');
+                });
+            }
+        });
+          //BURBUJAS
+
+          document.addEventListener("DOMContentLoaded", function() {
+    const bubblesContainer = document.querySelector(".bubbles");
+
+    function createBubble() {
+        const bubble = document.createElement("img"); 
+        bubble.src = "./img/pelota.png";
+
+        const size = Math.random() * 50 + 30; 
+        const leftPosition = Math.random() * 100; 
+        const animationDuration = Math.random() * 5 + 5; 
+        const delay = Math.random() * 3; 
+
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${leftPosition}%`;
+        bubble.style.bottom = `-10px`;
+        bubble.style.position = "absolute";
+        bubble.style.animation = `bubble-animation ${animationDuration}s infinite ease-in-out ${delay}s`;
+
+        bubblesContainer.appendChild(bubble);
+    }
+
+    const numberOfBubbles = Math.floor(Math.random() * 10 + 5);
+    for (let i = 0; i < numberOfBubbles; i++) {
+        createBubble();
+    }
+});
 
 
-
-
-
-
+        
+    </script>
 </body>
 </html>
-
