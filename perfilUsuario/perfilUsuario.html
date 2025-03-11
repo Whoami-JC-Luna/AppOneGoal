@@ -10,6 +10,26 @@
 
 </head>
 <body>
+   <!-- ICONO DEL CHAT IA -->
+<div class="chat-ia">
+    <img src="../img/ia/balon.png" alt="Chat IA" id="chatIcon">
+</div>
+
+<!-- CONTENEDOR DEL CHAT -->
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">
+        <span>Chat IA</span>
+        <button id="closeChat">&times;</button>
+    </div>
+    <div class="chat-content">
+        <p>Hola, soy la IA de OneGoal. ¿En qué puedo ayudarte?</p>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+        <button id="sendChat">Enviar</button>
+    </div>
+</div>
+
    <!-- HEADER -->
 <!-- HEADER -->
 <header class="header">
@@ -17,7 +37,7 @@
         <!-- Sección del balance -->
         
         <div>
-            <img src="img/OneGoalLogotipo.png" alt="">
+            <img src="../img/OneGoalLogotipo.png" alt="">
         </div>
 
         <nav class="nav">
@@ -83,7 +103,6 @@
     </section>
 
     <section class="leagues">
-
         <div class="leagues__header">
             <h2 class="leagues__title">ZONA DE JUEGO</h2>
             <!-- <a href="#" class="leagues__view-all">View all</a> -->
@@ -106,7 +125,7 @@
                 </a>
             
                 <a href="https://www.uefa.com/uefachampionsleague/" class="torneo">
-                    <img src="Ligas/champions.png" alt="Champions League" class="torneo__image">
+                    <img src="../img/Ligas/champions.png" alt="Champions League" class="torneo__image">
                 </a>
             
                 <a href="https://www.ligue1.com/" class="torneo">
@@ -155,10 +174,11 @@
                 </div>
             </div>
         </div>
-
+        </section>
 
 
         <section class="community-chat">
+
                 <div class="chat__box">
                     <h2 class="community-chat__title">Comunidad: Los Jugones</h2>
                 <div class="chat__usuarios">
@@ -204,44 +224,30 @@
         
 
 
-
-
-
-
-
+    
+    </section> <!-- Cierre correcto de leagues -->
+        
+        <nav class="navigation">
+            <button class="navigation__item navigation__item--active">🏠</button>
+            <button class="navigation__item">⚽</button>
+            <button class="navigation__item">📅</button>
+            <button class="navigation__item">⚙️</button>
+        </nav>
         <div class="banner_end">
             <div class="banner_end__container">
                 
                 <p>
-                    <img src="elementosGraficos/proximos.png" alt="">
+                    <img src="../img/elementosGraficos/proximos.png" alt="">
                 </p>
     
                 <p>
-                    <img src="elementosGraficos/banner_torneos.png" alt="">
+                    <img src="../img/elementosGraficos/banner_torneos.png" alt="">
                 </p>
             </div>
         </div>
-        
 
-    <nav class="navigation">
-        <button class="navigation__item navigation__item--active">🏠</button>
-        <button class="navigation__item">⚽</button>
-        <button class="navigation__item">📅</button>
-        <button class="navigation__item">⚙️</button>
-    </nav>
-
-
-
-
-
-    
-
-
-
-
-
- <!-- FOOTER -->
- <footer class="footer">
+<!-- FOOTER -->
+<footer class="footer">
     <div class="footer__container">
         <div class="footer__logo">
             <img src="/perfilUsuario/OneGoalLogotipo.png" alt="OneGoal Logo">
@@ -266,11 +272,7 @@
         <p>&copy; 2024 OneGoal. Todos los derechos reservados.</p>
     </div>
 </footer>
-
-
-
-
-
+<script src="./app.js"></script>
 
 </body>
 </html>
