@@ -18,19 +18,18 @@
                 <img src="img/logoBlanco.png" alt="OneGoal Logo">
             </div>
             <nav class="nav">
-                <!-- Botón de menú en dispositivos pequeños -->
+               
                 <div class="nav__toggle">
                     <i class="fa fa-bars"></i>
                 </div>
-                <!-- Lista de navegación -->
+                
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../index.html" class="nav__link">INICIO</a></li>
-                    <li class="nav__item"><a href="../MercadoApuestas/mercadoApuesstas.html" class="nav__link">MERCADO DE APUESTAS</a></li>
-                   
+                    <li class="nav__item"><a title="Ir a Inicio" href="../index.html" class="nav__link">INICIO</a></li>
+                    <li class="nav__item"><a title="Ir a Mercado de Apuestas" href="../MercadoApuestas/mercadoApuesstas.html" class="nav__link">MERCADO DE APUESTAS</a></li>
                 </ul>
-                <!-- Botones de login y registro -->
+                
                 <div class="nav__buttons">
-                    <a href="./iniciarsesion.html" class="button button--primary">Login</a>
+                    <a href="./iniciarsesion.html" title="Ir a Iniciar Sesion" class="button button--primary">Login</a>
                     <a href="./registro.html" class="button button--outline">Regístrate</a>
                 </div>
             </nav>
@@ -41,25 +40,29 @@
     <div class="content">
         <form class="form">
             <label for="nombreYapellidos" class="form__label">Nombre y Apellidos:</label>
-            <input type="text" id="nombreYapellidos" name="nombreYapellidos" class="form__input" required>
+            <input type="text" title="Introduzca su nombre y apellidos" id="nombreYapellidos" name="nombreYapellidos" class="form__input" required>
+            <div class="tooltip" id="tooltip-nombreYapellidos">Introduzca su nombre y apellidos</div>
 
             <label for="email" class="form__label">Email:</label>
-            <input type="email" id="email" name="email" class="form__input" required>
+            <input type="email" title="Introduzca su correo electronico" id="email" name="email" class="form__input" required>
+            <div class="tooltip" id="tooltip-email">Introduzca su correo electronico</div>
 
             <label for="password" class="form__label">Contraseña:</label>
-            <input type="password" id="password" name="password" class="form__input" required>
+            <input type="password" title="Introduzca su contraseña" id="password" name="password" class="form__input" required>
+            <div class="tooltip" id="tooltip-password">Introduzca su contraseña</div>
 
             <label for="DNI" class="form__label">DNI:</label>
-            <input type="text" id="DNI" name="DNI" class="form__input" required>
+            <input type="text" title="Introduzca su DNI" id="DNI" name="DNI" class="form__input" required >
+            <div class="tooltip" id="tooltip-DNI">Introduzca su DNI</div>
 
             <div class="form__checkbox-group">
-                <input type="checkbox" value="aceptar" class="form__checkbox" required>
-                <span class="form__checkbox-label">Acepto los términos y condiciones</span>
+                <input id="ATC" type="checkbox" value="aceptar" class="form__checkbox" required>
+                <label for="ATC" class="form__checkbox-label">Acepto los términos y condiciones</label>
             </div>
 
             <div class="form__checkbox-group">
-                <input type="checkbox" value="aceptar" class="form__checkbox" required>
-                <span class="form__checkbox-label">Acepto recibir noticias vía email</span>
+                <input type="checkbox" value="aceptar" id="ARN" class="form__checkbox" required>
+                <label for="ARN" class="form__checkbox-label">Acepto recibir noticias vía email</label>
                 <div>¿Ya tienes cuenta?<a class="form__link" href="./iniciarsesion.html" class="nav__link"> Iniciar Sesion</a></div>
             </div>
 
@@ -67,10 +70,8 @@
         </form>
 
         <!-- Burbujas -->
-        <div class="bubbles">
-        </div>
+        <div class="bubbles"></div>
     </div>
-
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -87,9 +88,9 @@
             </nav>
 
             <div class="footer__social">
-                <a href="#" class="button button--social"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="button button--social"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="button button--social"><i class="fa-brands fa-instagram"></i></a>
+                <a title="Facebook" href="#" class="button button--social"><i class="fa-brands fa-facebook-f"></i></a>
+                <a title="Twitter" href="#" class="button button--social"><i class="fa-brands fa-twitter"></i></a>
+                <a title="Instagram" href="#" class="button button--social"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
 
@@ -99,18 +100,14 @@
     </footer>
 
     <script>
-        
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.querySelector('.nav__toggle');
             const menuList = document.querySelector('.nav__list');
-            const content = document.querySelector('.content');  
+            const content = document.querySelector('.content');
 
-            
             if (menuToggle && menuList && content) {
                 menuToggle.addEventListener('click', () => {
-                    menuList.classList.toggle('active');  
-
-                    
+                    menuList.classList.toggle('active');
                     if (menuList.classList.contains('active')) {
                         content.classList.add('menu-active');
                     } else {
@@ -120,39 +117,32 @@
             }
         });
 
-        //BURBUJAS
-
+        // BURBUJAS
         document.addEventListener("DOMContentLoaded", function() {
-    const bubblesContainer = document.querySelector(".bubbles");
+            const bubblesContainer = document.querySelector(".bubbles");
 
-    function createBubble() {
-        const bubble = document.createElement("img"); 
-        bubble.src = "./img/pelota.png";
+            function createBubble() {
+                const bubble = document.createElement("img");
+                bubble.src = "./img/pelota.png";
+                bubble.alt = "Pelota de futbol";
+                const size = Math.random() * 50 + 30;
+                const leftPosition = Math.random() * 100;
+                const animationDuration = Math.random() * 5 + 5;
+                const delay = Math.random() * 3;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${leftPosition}%`;
+                bubble.style.bottom = `-10px`;
+                bubble.style.position = "absolute";
+                bubble.style.animation = `bubble-animation ${animationDuration}s infinite ease-in-out ${delay}s`;
+                bubblesContainer.appendChild(bubble);
+            }
 
-        const size = Math.random() * 50 + 30; 
-        const leftPosition = Math.random() * 100; 
-        const animationDuration = Math.random() * 5 + 5; 
-        const delay = Math.random() * 3; 
-
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${leftPosition}%`;
-        bubble.style.bottom = `-10px`;
-        bubble.style.position = "absolute";
-        bubble.style.animation = `bubble-animation ${animationDuration}s infinite ease-in-out ${delay}s`;
-
-        bubblesContainer.appendChild(bubble);
-    }
-
-    const numberOfBubbles = Math.floor(Math.random() * 10 + 5);
-    for (let i = 0; i < numberOfBubbles; i++) {
-        createBubble();
-    }
-});
-
-
-
-
+            const numberOfBubbles = Math.floor(Math.random() * 10 + 5);
+            for (let i = 0; i < numberOfBubbles; i++) {
+                createBubble();
+            }
+        });
     </script>
 </body>
 </html>
