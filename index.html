@@ -9,13 +9,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+      .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+        z-index: 9000;
+      }
+
+      .header.scrolled {
+        transform: translateY(-15px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header.encajado {
+        transform: translateY(0);
+      }
+
+      .nav__link {
+        transition: color 0.3s ease;
+      }
+
+      .nav__link:hover {
+        color: #AAFF04;
+      }
+
+      .button {
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      }
+
+      .button--primary:hover {
+        background-color: #9ae300;
+        transform: translateY(-2px);
+      }
+
+      .button--outline:hover {
+        background-color: #AAFF04;
+        color: #000;
+        transform: translateY(-2px);
+      }
+    </style>
+
 </head>
 <body>
 
 
 <!-- ICONO DEL CHAT IA -->
 <div id="chatIcon" class="fixed bottom-5 right-5 w-14 h-14 bg-white rounded-full shadow-md justify-center items-center cursor-pointer transition-transform duration-300 hover:scale-110 z-[1000]">
-    <img src="img/ia/balon.png" alt="Chat IA" class="w-12 h-12">
+    <img src="./img/ia/balon.png" alt="Chat IA" class="w-12 h-12">
 </div>
 
 <!-- CONTENEDOR DEL CHAT -->
@@ -46,16 +89,21 @@
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
-                <img src="img/logoBlanco.png" alt="OneGoal Logo">
+                <img src="./img/logoBlanco.png" alt="OneGoal Logo">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="MercadoApuestas/mercadoApuesstas.html" class="nav__link" aria-label="Mercado de Apuestas">Mercado de Apuestas</a></li>
-                    <li class="nav__item"><a href="perfilUsuario/perfilUsuario.html" class="nav__link" aria-label="Mi Perfil">Mi Perfil</a></li>
+                    <li class="nav__item"><a href="./MercadoApuestas/mercadoApuesstas.html" class="nav__link">Mercado de Apuestas</a></li>
+                    <li class="nav__item"><a href="./perfilUsuario/perfilUsuario.html" class="nav__link">Mi Perfil</a></li>
                 </ul>
                 <div class="nav__buttons">
-                    <a href="Registro/iniciarsesion.html" class="button button--primary" aria-label="Iniciar Sesión">Login</a>
-                    <a href="Registro/registro.html" class="button button--outline" aria-label="Registrarse">Regístrate</a>
+                    <a href="./Registro/iniciarsesion.html" class="button button--primary">Login</a>
+                    <a href="./Registro/registro.html" class="button button--outline">Regístrate</a>
                 </div>
             </nav>
         </div>
@@ -67,7 +115,7 @@
         <div class="hero__container_right">
 
             <div class="hero__image">
-                <img src="img/content/Griez.png" alt="Jugador de fútbol">
+                <img src="./img/content/Griez.png" alt="Jugador de fútbol">
             </div>
 
             </div>
@@ -76,10 +124,10 @@
         <div class="hero__container_left">
             <div class="hero__content">
                 <h3 class="hero__title">La principal plataforma de apuestas sociales <br>para los apasionados del fútbol en todo el mundo</span>!</h3>
-                <a href="#" class="button button--primary hero__cta" aria-label="Únete Ahora">Únete Ahora</a>
+                <a href="#" class="button button--primary hero__cta">Únete Ahora</a>
 
                 <div class="section__background">
-                    <img src="img/elementosGraficos/rectangle_hero.png" alt="Fondo decorativo">
+                    <img src="./img/elementosGraficos/rectangle_hero.png" alt="Fondo decorativo">
                 </div>
 
             </div>
@@ -96,41 +144,43 @@
     <p class="section__text_banner">
         Nuestro objetivo es dar forma a una <strong class="section__text--bold">experiencia de apuestas completamente nueva</strong> y crear <strong class="section__text--bold">comunidades de fútbol</strong>, construyendo una <strong class="section__text--bold">red social</strong> que facilite la creación de desafíos dinámicos dentro de cada competición profesional o partido.
     </p>
-    <img src="img/OneGoalLogotipo.png" alt="OneGoal Logo"> 
+    <div class="flex justify-center items-center w-full">
+        <img src="./img/OneGoalLogotipo.png" alt="OneGoal Logo" class="mx-auto"> 
+    </div>
 </div>
 
     <!-- SECCIÓN 2 -->
 <div class="section2">    
 
     <div class="section2__image">
-        <img src="img/mockups/landingPhone2.png" alt="OneGoal">
+        <img src="./img/mockups/landingPhone2.png" alt="OneGoal">
     </div>
 
  
       <div class="section2__image2">
-        <img src="img/elementosGraficos/TextPhone.png" alt="">
+        <img src="./img/elementosGraficos/TextPhone.png" alt="">
     
 
     
         <!-- NUEVO APARTADO DE ESTADÍSTICAS -->
         <div class="section2__stats">
             <div class="stat">
-                <img src="img/elementosGraficos/star.png" alt="Descargas">
+                <img src="./img/elementosGraficos/star.png" alt="Descargas">
                 <span class="stat__number">5K+</span>
                 <span class="stat__text">Descargas</span>
             </div>
             <div class="stat">
-                <img src="img/elementosGraficos/torneoIcon.png" alt="Torneos incluidos">
+                <img src="./img/elementosGraficos/torneoIcon.png" alt="Torneos incluidos">
                 <span class="stat__number">20+</span>
                 <span class="stat__text">Torneos incluidos</span>
             </div>
             <div class="stat">
-                <img src="img/elementosGraficos/poolIcon.png" alt="Pollas creadas">
+                <img src="./img/elementosGraficos/poolIcon.png" alt="Pollas creadas">
                 <span class="stat__number">70K+</span>
                 <span class="stat__text">Apuestas Creadas</span>
             </div>
             <div class="stat">
-                <img src="img/elementosGraficos/happy.png" alt="Clientes felices">
+                <img src="./img/elementosGraficos/happy.png" alt="Clientes felices">
                 <span class="stat__number">640K+</span>
                 <span class="stat__text">Clientes felices</span>
             </div>
@@ -147,7 +197,9 @@
     <div class="section">
         
         <div class="section__image_text">
-            <img src="img/elementosGraficos/cómoFunciona.png" alt="">
+            <div class="flex justify-center items-center w-full mb-4">
+                <img src="./img/elementosGraficos/cómoFunciona.png" alt="" class="mx-auto">
+            </div>
 
             <p>Nuestro objetivo es dar forma a una <strong>experiencia de apuestas completamente nueva</strong> y <strong>crear comunidades de fútbol,</strong> construyendo una red social que facilite la <strong>creación de desafíos vibrantes dentro de cada competición profesional o juego</strong>.</p>
 
@@ -161,29 +213,53 @@
                 <p class="torneos__subtitle">Podras jugar en diferentes torneos como el mundial, champions. Adaptamos nuetra oferta a los caldenarios de los grandes torneos</p>
             </div>
             <div class="torneos__container">
-                <article class="torneo">
-                    <img src="perfilUsuario/Ligas/LaLiga.png" alt="Conmebol" class="torneo__image">
-                    <h3 class="torneo__title">Gratis hasta 10 usuarios</h3>
-                    <p class="torneo__description">Empieza la liga y las comunidades vuelvesn, forma la tuya y compite contra otras por grandes premios...</p>
-                    <a href="#" class="torneo__link">Conoce más →</a>
+                <article class="torneo flex flex-col h-[600px] justify-between">
+                    <div class="flex justify-center items-center h-48">
+                        <img src="./perfilUsuario/Ligas/LaLiga.png" alt="Conmebol" class="torneo__image w-32 h-32 object-contain">
+                    </div>
+                    <div class="flex-grow flex flex-col justify-center px-4">
+                        <h3 class="torneo__title text-center mb-4">Gratis hasta 10 usuarios</h3>
+                        <p class="torneo__description text-center">Empieza la liga y las comunidades vuelvesn, forma la tuya y compite contra otras por grandes premios...</p>
+                    </div>
+                    <div class="text-center pb-6">
+                        <a href="#" class="torneo__link">Conoce más →</a>
+                    </div>
                 </article>
-                <article class="torneo">
-                    <img src="perfilUsuario/Ligas/premier.png" alt="FIFA World Cup Qatar 2022" class="torneo__image">
-                    <h3 class="torneo__title">Gratis hasta 8 usuarios</h3>
-                    <p class="torneo__description">Campeonato mundial de fútbol de la FIFA en el que participan equipos de las selecciones de 32 países...</p>
-                    <a href="#" class="torneo__link" aria-label="Conoce más">Conoce más →</a>
+                <article class="torneo flex flex-col h-[600px] justify-between">
+                    <div class="flex justify-center items-center h-48">
+                        <img src="./perfilUsuario/Ligas/premier.png" alt="FIFA World Cup Qatar 2022" class="torneo__image w-32 h-32 object-contain">
+                    </div>
+                    <div class="flex-grow flex flex-col justify-center px-4">
+                        <h3 class="torneo__title text-center mb-4">Gratis hasta 8 usuarios</h3>
+                        <p class="torneo__description text-center">Campeonato mundial de fútbol de la FIFA en el que participan equipos de las selecciones de 32 países...</p>
+                    </div>
+                    <div class="text-center pb-6">
+                        <a href="#" class="torneo__link">Conoce más →</a>
+                    </div>
                 </article>
-                <article class="torneo">
-                    <img src="img/Ligas/champions.png" alt="Champions League" class="torneo__image">
-                    <h3 class="torneo__title">Gratis hasta 15 usuarios</h3>
-                    <p class="torneo__description">Es el torneo internacional de fútbol más prestigioso a nivel de clubes en el mundo...</p>
-                    <a href="#" class="torneo__link" aria-label="Conoce más">Conoce más →</a>
+                <article class="torneo flex flex-col h-[600px] justify-between">
+                    <div class="flex justify-center items-center h-48">
+                        <img src="./img/Ligas/champions.png" alt="Champions League" class="torneo__image w-32 h-32 object-contain">
+                    </div>
+                    <div class="flex-grow flex flex-col justify-center px-4">
+                        <h3 class="torneo__title text-center mb-4">Gratis hasta 15 usuarios</h3>
+                        <p class="torneo__description text-center">Es el torneo internacional de fútbol más prestigioso a nivel de clubes en el mundo...</p>
+                    </div>
+                    <div class="text-center pb-6">
+                        <a href="#" class="torneo__link">Conoce más →</a>
+                    </div>
                 </article>
-                <article class="torneo">
-                    <img src="perfilUsuario/Ligas/fracesa.png" alt="Copa América" class="torneo__image">
-                    <h3 class="torneo__title">Gratis hasta 10 jugadores</h3>
-                    <p class="torneo__description">Principal torneo internacional de fútbol en América del Sur organizado por la Conmebol...</p>
-                    <a href="#" class="torneo__link" aria-label="Conoce más">Conoce más →</a>
+                <article class="torneo flex flex-col h-[600px] justify-between">
+                    <div class="flex justify-center items-center h-48">
+                        <img src="./perfilUsuario/Ligas/fracesa.png" alt="Copa América" class="torneo__image w-32 h-32 object-contain">
+                    </div>
+                    <div class="flex-grow flex flex-col justify-center px-4">
+                        <h3 class="torneo__title text-center mb-4">Gratis hasta 10 jugadores</h3>
+                        <p class="torneo__description text-center">Principal torneo internacional de fútbol en América del Sur organizado por la Conmebol...</p>
+                    </div>
+                    <div class="text-center pb-6">
+                        <a href="#" class="torneo__link">Conoce más →</a>
+                    </div>
                 </article>
             </div>
         </section>
@@ -210,7 +286,7 @@
                 Los usuarios crean un grupo de apuestas con 9 amigos
             </p>
             <p>
-                <img src="img/como_se_juega/pool 1.png" alt="">
+                <img src="./img/como_se_juega/pool 1.png" alt="">
             </p>
             <p>
                 Cada uno apuesta 16 USD
@@ -218,12 +294,12 @@
         </div>
     
         <div class="arrow arrow1">
-            <img src="img/como_se_juega/arrow 1.png" alt="">
+            <img src="./img/como_se_juega/arrow 1.png" alt="">
         </div>
     
         <div class="section3__content2">
             <p>
-                <img src="img/como_se_juega/equipos 1.png" alt="">
+                <img src="./img/como_se_juega/equipos 1.png" alt="">
             </p>
             <p>
                 El partido deseado está en curso
@@ -232,25 +308,23 @@
         </div>
     
         <div class="arrow arrow2">
-            <img src="img/como_se_juega/arrow 1.png" alt="">
+            <img src="./img/como_se_juega/arrow 1.png" alt="">
         </div>
     
         <div class="section3__content3">
             <p>
                 Ganador 144 USD
             </p>
-            <p>
-                <img src="img/como_se_juega/winer 1.png" alt="">
-
+            <p class="flex justify-center items-center">
+                <img src="./img/como_se_juega/winer 1.png" alt="">
             </p>
             <p>
                 Después de que finaliza el partido, si un usuario predice correctamente el resultado, por ejemplo, 3-2 a favor del Chelsea FC, recibe el dinero del premio
-    
             </p>
         </div>
 
         <div class="section3__cta">
-            <a href="MercadoApuestas/mercadoApuesstas.html" class="button button--primary" aria-label="Empieza Ahora">Empieza Ahora</a>
+            <a href="MercadoApuestas/mercadoApuesstas.html" class="button button--primary">Empieza Ahora</a>
         </div>
         
         
@@ -263,12 +337,12 @@
         <div class="banner_end__container">
             
             <p>
-                <img src="img/elementosGraficos/proximos.png" alt="">
+                <img src="./img/elementosGraficos/proximos.png" alt="">
             </p>
 
             <p>¡La Copa Libertadores está de vuelta! <br>Prepárate para vivir la emoción con tu comunidad y demuestra quién manda en las apuestas.</p>
             <p>
-                <img src="img/elementosGraficos/banner_torneos.png" alt="">
+                <img src="./img/elementosGraficos/banner_torneos.png" alt="">
             </p>
         </div>
     </div>
@@ -281,7 +355,7 @@
 
         <div class="Contactanos_rrss">
             <div class="Contactanos">
-                <img src="img/elementosGraficos/celebrando2.png" alt="">
+                <img src="./img/elementosGraficos/celebrando2.png" alt="">
             </div>
         
             <div class="rrss">
@@ -289,13 +363,13 @@
                     <p class="rrss__text">
                         ¿Listo para unirte a la comunidad? <br> Síguenos en redes y mantente al tanto de las novedades.
                     </p>
-                    <a href="#" class="button button--primary hero__cta" aria-label="Únete Ahora">Únete Ahora</a>
+                    <a href="#" class="button button--primary hero__cta">Únete Ahora</a>
 
                 </div>
             </div>
         
             <div class="rrss">
-                <img src="img/elementosGraficos/ganadora.png" alt="">
+                <img src="./img/elementosGraficos/ganadora.png" alt="">
             </div>
         </div>
         
@@ -307,21 +381,21 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__logo">
-                <img src="img/OneGoalLogotipo.png" alt="OneGoal Logo">
+                <img src="./img/OneGoalLogotipo.png" alt="OneGoal Logo">
             </div>
 
             <nav class="footer__nav">
                 <ul class="footer__list">
-                    <li class="footer__item"><a href="#" class="footer__link"  aria-label="Términos y Condiciones">Términos y Condiciones</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link" aria-label="Política de Privacidad">Política de Privacidad</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link" aria-label="Contacto">Contacto</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Términos y Condiciones</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Política de Privacidad</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Contacto</a></li>
                 </ul>
             </nav>
 
             <div class="footer__social">
-                <a href="#" class="button button--social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="button button--social" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="button button--social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="button button--social"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="button button--social"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="button button--social"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
 
@@ -330,8 +404,6 @@
         </div>
     </footer>
 
-
-
-    <script src="/app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
