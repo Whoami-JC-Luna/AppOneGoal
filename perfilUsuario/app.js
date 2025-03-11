@@ -35,23 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (sectionTop < triggerBottom) {
                 section.classList.add("show"); // Agrega la clase cuando es visible
             }
-        });let lastScrollTop = 0;
-        const header = document.querySelector(".header");
-        
-        window.addEventListener("scroll", function () {
-            let scrollTop = window.scrollY;
-        
-            if (scrollTop > lastScrollTop) {
-                // Cuando bajas, el header se fija
-                header.classList.add("scrolled");
-            } else if (scrollTop === 0) {
-                // Cuando estás en la parte superior, vuelve a su posición normal
-                header.classList.remove("scrolled");
-            }
-        
-            lastScrollTop = scrollTop;
         });
-        
     }
 
     window.addEventListener("scroll", checkScroll);
@@ -76,5 +60,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeChat.addEventListener("click", function () {
         chatBox.style.display = "none"; // Oculta el chat
+    });
+});
+
+// Menú hamburguesa
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    // Toggle del menú
+    navToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+        });
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+            mainNav.classList.remove('active');
+        }
+    });
+
+    // Ajustar el menú al redimensionar la ventana
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1182) {
+            mainNav.classList.remove('active');
+        }
     });
 });
