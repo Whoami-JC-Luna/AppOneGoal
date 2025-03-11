@@ -237,7 +237,7 @@ body {
 
 /* Cuando haces scroll hacia abajo, el header se mueve */
 .header.scrolled {
-    transform: translateY(-100%);
+    transform: translateY(-20%);
 }
 
 /* Cuando subes, vuelve a su posición original */
@@ -251,6 +251,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+   
 }
 
 /* Sección del balance */
@@ -981,19 +983,7 @@ body {
     left: 0;
 }
 
-/* Elementos de navegación */
-.navigation__item {
-    background: none;
-    border: none;
-    color:var(--color-blanco);
-    font-size: 1.5rem;
-    border-radius: 0 0 20px 20px; 
-    cursor: pointer;
-}
 
-.navigation__item--active {
-    color: var(--color-buton);
-}
 
 
 
@@ -1118,9 +1108,16 @@ body {
         grid-template-rows: auto auto auto auto;
     }
 
-    .navigation {
-        display: flex; 
-        justify-content: space-evenly;
+  
+    
+}
+@media (max-width: 1200px) {
+
+    .header__container {
+        max-width: 1303px;
+        flex-wrap: wrap;
+        justify-content: none;
+        align-items: center;
     }
 }
 
