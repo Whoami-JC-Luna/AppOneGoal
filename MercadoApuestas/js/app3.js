@@ -83,3 +83,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
     
+
+
+
+
+
+    // Variables para el header y menú hamburguesa
+const header = document.querySelector('.header');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+
+// Control del menú hamburguesa
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    nav.classList.toggle('active');
+});
+
+// Cerrar menú al hacer click en un enlace
+document.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        nav.classList.remove('active');
+    });
+});
+
+// Control del scroll para el header
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+        header.classList.remove('scrolled');
+        header.classList.remove('encajado');
+        return;
+    }
+
+    if (currentScroll > lastScroll && !header.classList.contains('scrolled')) {
+        // Scroll hacia abajo
+        header.classList.remove('encajado');
+        header.classList.add('scrolled');
+    } else if (currentScroll < lastScroll && header.classList.contains('scrolled')) {
+        // Scroll hacia arriba
+        header.classList.remove('scrolled');
+        header.classList.add('encajado');
+    }
+
+    lastScroll = currentScroll;
+}); 
