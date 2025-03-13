@@ -56,10 +56,10 @@ body {
         "banner_end"
         "rrss"
         "footer";
-    grid-template-rows: auto 100vh auto auto auto;
     
+    grid-template-rows: auto minmax(100vh, auto) auto auto auto;
     background-image: url('img/content/background.png'); 
-    background-size:  100%;
+    background-size: cover;
     background-position: center;
     background-repeat:no-repeat; 
     background-attachment:inherit;
@@ -1126,7 +1126,6 @@ body {
     /* Logo en el menú móvil */
     .nav::before {
         content: '';
-        background: url('/img/logo.png') no-repeat center;
         background-size: contain;
         width: 150px;
         height: 60px;
@@ -1173,13 +1172,8 @@ body {
 /* ====== MEDIA QUERY ÚNICA PARA 768px ====== */
 
 @media screen and (max-width: 768px) {
-    /* Asegurar que el contenido se vea correctamente en móviles */
-    html, body {
-        width: 100%;
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-    }
+     /* Asegurar que el contenido se vea correctamente en móviles */
+  
 
     /* Ajustar header */
     .header {

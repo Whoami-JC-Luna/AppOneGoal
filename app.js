@@ -142,3 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
         chatBox.style.display = "none"; // Oculta el chat
     });
 });
+
+
+console.log(document.documentElement.scrollWidth, window.innerWidth);

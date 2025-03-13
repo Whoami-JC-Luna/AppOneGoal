@@ -845,7 +845,7 @@ section, .hero, .torneos, .section_banner, .section2, .section3, .banner_end, .C
   height: 16px;
   cursor: pointer;
   z-index: 1000;
-  margin-left: auto; 
+  margin-left: auto; /* Empuja el icono a la derecha */
   margin-right: 10px; 
   position: absolute;
   right: 15px; 

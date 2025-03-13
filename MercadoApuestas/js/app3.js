@@ -109,3 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+console.log(document.documentElement.scrollWidth, window.innerWidth);
