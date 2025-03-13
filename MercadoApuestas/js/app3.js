@@ -131,3 +131,18 @@ window.addEventListener('scroll', () => {
 
     lastScroll = currentScroll;
 }); 
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Botón de la sidebar
+    const toggleSidebar = document.getElementById("toggleSidebar");
+    const sidebar = document.querySelector(".sidebar");
+
+    toggleSidebar.addEventListener("click", function () {
+        sidebar.classList.toggle("active");
+    });
+});
