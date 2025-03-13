@@ -903,8 +903,14 @@ body {
 
 
 
+
+
+
 /*  MediaQUERYS */
 
+/* ====== MEDIA QUERIES PARA INDEX ====== */
+
+/* Móviles y Tablets (≤ 768px) */
 @media screen and (max-width: 768px) {
     /* Layout General */
     body {
@@ -925,7 +931,6 @@ body {
         width: 100%;
         height: 60vh;
         margin-bottom: 2em;
-        overflow: visible;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -949,91 +954,40 @@ body {
     }
 
     .hero__title {
-        font-size: 3em;
+        font-size: 2.5em;
         text-align: center;
         margin: 0.5em 0;
         line-height: 1.2;
-        width: 100%;
     }
 
     .hero__subtitle {
-        font-size: 1.8em;
+        font-size: 1.6em;
         margin: 1em 0;
     }
 
     .hero__cta {
         font-size: 1.4em;
-        padding: 20px 40px;
+        padding: 15px 30px;
         margin: 2em 0;
     }
 
-    /* Section Banner */
+    /* Secciones Generales */
     .section_banner {
         padding: 30px;
     }
-    
-    .section__text_banner {
-        font-size: 0.8em;
-        line-height: 1.3;
-        padding: 0 10px;
-    }
 
-    /* Section 2 */
-    .section2 {
-        grid-template-areas: 
-            "image"
-            "content"
-            "stats";
-        grid-template-columns: 1fr;
+    .section2, .section3, .torneos__container {
+        display: flex;
+        flex-direction: column;
         gap: 2em;
-    }
-
-    .section2__image2 {
-        align-items: center;
-    }
-
-    .section2__stats {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        padding: 0 20px;
-        margin: 1em auto;
-    }
-
-    .stat {
-        flex: 0 1 40%;
-        min-width: 120px;
-    }
-
-    /* Section 3 */
-    .section3 {
-        grid-template-areas: 
-            "content1"
-            "arrow1"
-            "content2"
-            "arrow2"
-            "content3"
-            "boton";
-        grid-template-columns: 1fr;
-        gap: 1em;
     }
 
     .section3__content1, 
     .section3__content2, 
     .section3__content3 {
-        font-size: 2em;
+        font-size: 1.8em;
         padding: 20px;
         text-align: center;
-        width: 100%;
-    }
-
-    .section3__content1 img, 
-    .section3__content2 img, 
-    .section3__content3 img {
-        width: 90%;
-        max-width: 350px;
-        margin: 1em auto;
     }
 
     .arrow1, .arrow2 {
@@ -1050,12 +1004,6 @@ body {
     }
 
     /* Torneos */
-    .torneos__container {
-        display: flex;
-        flex-direction: column;
-        gap: 2em;
-    }
-
     .torneo {
         width: 100%;
         max-width: none;
@@ -1077,51 +1025,24 @@ body {
         margin-bottom: 1.5em;
     }
 
-    /* Banner End */
-    .banner_end__container {
-        display: flex;
-        flex-direction: column;
-        gap: 3em;
-    }
-
-    .banner_end__container img {
-        width: 100%;
-        max-width: none;
-    }
-
-    .banner_end__container p {
-        font-size: 2em;
-        padding: 0 1em;
-    }
-
-    /* Contactanos RRSS */
-    .Contactanos_rrss {
-        grid-template-columns: 1fr;
-        gap: 3em;
-    }
-
-    .Contactanos,
-    .rrss {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .rrss__content {
-        width: 100%;
-        text-align: center;
-    }
-
-    .rrss__text {
-        font-size: 2rem;
-        margin-bottom: 1.5em;
-    }
-
     /* Header y Navegación */
     .header {
+        display: flex;
+        justify-content: space-between; /* Separa logo y menú */
+        align-items: center;
+        padding: 10px 15px;
         position: relative;
-        padding: 15px;
+    }
+
+    /* Ajuste del logo */
+    .header__logo {
+        max-width: 120px;
+        flex-grow: 0; /* Evita que ocupe más espacio */
+    }
+
+    .header__logo img {
+        max-height: 30px;
+        width: auto;
     }
 
     /* Menú hamburguesa */
@@ -1129,15 +1050,19 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 21px;
+        width: 22px; /* Reduce tamaño */
+        height: 16px;
         cursor: pointer;
         z-index: 1000;
+        position: absolute;
+        right: 15px; /* Se alinea a la derecha */
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .menu-toggle span {
         display: block;
-        height: 3px;
+        height: 2px;
         width: 100%;
         background-color: black;
         transition: all 0.3s ease;
@@ -1223,26 +1148,12 @@ body {
         background-color: black;
     }
 
-    .Contactanos img,
-    .rrss img {
-        max-width: 60%;
-        margin: 1em auto;
-    }
-
+    /* Footer */
     .footer__container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-    }
-
-    .footer__logo,
-    .footer__nav,
-    .footer__social {
         align-items: center;
-    }
-
-    .footer__nav {
-        grid-template-columns: 1fr;
-        gap: 1em;
     }
 
     .footer__list {
@@ -1254,85 +1165,186 @@ body {
     }
 }
 
-@media screen and (max-width: 480px) {
+
+
+
+
+/* ====== ESTILOS RESPONSIVE UNIFICADOS (≤ 768px) ====== */
+
+@media screen and (max-width: 768px) {
+    /* ====== Layout General ====== */
+    body {
+        grid-template-rows: auto;
+    }
+
+    /* ====== Header y Navegación ====== */
+    .header {
+        display: flex;
+        justify-content: space-between; /* Separa logo y menú */
+        align-items: center;
+        padding: 10px 15px;
+        position: relative;
+    }
+
+    /* Logo */
+    .header__logo {
+        max-width: 120px;
+        flex-grow: 0; /* Evita que ocupe más espacio */
+    }
+
+    .header__logo img {
+        max-height: 30px;
+        width: auto;
+    }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 22px; /* Reduce tamaño */
+        height: 16px;
+        cursor: pointer;
+        z-index: 1000;
+        position: absolute;
+        right: 15px; /* Se alinea a la derecha */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-toggle span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        transition: all 0.3s ease;
+    }
+
+    /* Navegación móvil */
+    .nav {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 999;
+        transition: top 0.3s ease-in-out;
+        padding-top: 20px;
+    }
+
+    .nav.active {
+        top: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .nav__link {
+        font-size: 1.8rem;
+        color: black;
+        display: block;
+        padding: 1rem 0;
+    }
+
+    /* ====== Hero Section ====== */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+        margin-top: 1em;
+        min-height: 100vh;
+    }
+
+    .hero__image {
+        width: 100%;
+        height: 60vh;
+        margin-bottom: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
     .hero__title {
-        font-size: 2.2em;
+        font-size: 2.5em;
+        text-align: center;
+        margin: 0.5em 0;
+        line-height: 1.2;
     }
 
     .hero__subtitle {
         font-size: 1.6em;
+        margin: 1em 0;
     }
 
+    .hero__cta {
+        font-size: 1.4em;
+        padding: 15px 30px;
+        margin: 2em 0;
+    }
+
+    /* ====== Secciones Generales ====== */
     .section_banner {
-        padding: 20px;
-    }
-    
-    .section__text_banner {
-        font-size: 0.7em;
-        line-height: 1.2;
+        padding: 30px;
     }
 
-    .torneo__title {
-        font-size: 1.8rem;
-    }
-
-    .torneo__description {
-        font-size: 1.4rem;
-    }
-
-    .section3__content1, 
-    .section3__content2, 
-    .section3__content3 {
-        font-size: 1.8em;
-    }
-
-    .banner_end__container p {
-        font-size: 1.8em;
-    }
-
-    .section2__stats {
+    .section2, .section3, .torneos__container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 2em;
     }
 
-    .stat {
+    /* Torneos */
+    .torneo {
         width: 100%;
-        max-width: 200px;
+        max-width: none;
+        padding: 2em;
     }
 
-    .hero__content,
-    .section_banner,
-    .section2__image2,
-    .section3__content1,
-    .section3__content2,
-    .section3__content3,
-    .banner_end__container p,
-    .torneo__description,
+    .torneo__image {
+        width: 180px;
+        margin: 0 auto 1.5em;
+    }
+
     .torneo__title {
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+
+    .torneo__description {
+        font-size: 1.6rem;
+        margin-bottom: 1.5em;
+    }
+
+    /* ====== Footer ====== */
+    .footer__container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer__list {
         text-align: center;
     }
-}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .section_banner {
-        padding: 40px;
-    }
-
-    .section2 {
-        grid-template-columns: 1fr;
-    }
-
-    .torneos__container {
-        grid-template-columns: repeat(2, 1fr);
+    .footer__item {
+        margin-bottom: 0.5em;
     }
 }
-
-
-
-
