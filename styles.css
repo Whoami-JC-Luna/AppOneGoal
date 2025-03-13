@@ -1170,31 +1170,35 @@ body {
 
 
 /* ====== ESTILOS RESPONSIVE UNIFICADOS (≤ 768px) ====== */
+/* ====== MEDIA QUERY ÚNICA PARA 768px ====== */
 
 @media screen and (max-width: 768px) {
-    /* ====== Layout General ====== */
-    body {
-        grid-template-rows: auto;
+    /* Asegurar que el contenido se vea correctamente en móviles */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
     }
 
-    /* ====== Header y Navegación ====== */
+    /* Ajustar header */
     .header {
         display: flex;
-        justify-content: space-between; /* Separa logo y menú */
+        justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
         align-items: center;
-        padding: 10px 15px;
-        position: relative;
+        padding: 8px 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    /* Logo */
-    .header__logo {
-        max-width: 120px;
-        flex-grow: 0; /* Evita que ocupe más espacio */
+    .logo {
+        max-width: 100px; /* Reduce el tamaño del logo */
+        height: auto;
     }
 
     .header__logo img {
-        max-height: 30px;
-        width: auto;
+        max-height: 30px; /* Ajusta el tamaño del logo */
+        width: 100%;
     }
 
     /* Menú hamburguesa */
@@ -1202,63 +1206,26 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 22px; /* Reduce tamaño */
-        height: 16px;
+        width: 25px; /* Reduce el tamaño del icono */
+        height: 18px;
         cursor: pointer;
         z-index: 1000;
-        position: absolute;
-        right: 15px; /* Se alinea a la derecha */
-        top: 50%;
-        transform: translateY(-50%);
+        margin-left: auto;
     }
 
     .menu-toggle span {
         display: block;
-        height: 2px;
+        height: 3px;
         width: 100%;
         background-color: black;
         transition: all 0.3s ease;
     }
 
-    /* Navegación móvil */
-    .nav {
-        position: fixed;
-        top: -100vh;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        z-index: 999;
-        transition: top 0.3s ease-in-out;
-        padding-top: 20px;
-    }
-
-    .nav.active {
-        top: 0;
-    }
-
-    .nav__list {
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        padding: 2rem 0;
-        width: 100%;
-    }
-
-    .nav__link {
-        font-size: 1.8rem;
-        color: black;
-        display: block;
-        padding: 1rem 0;
-    }
-
-    /* ====== Hero Section ====== */
+    /* Ajuste del hero */
     .hero {
         display: flex;
         flex-direction: column;
+        align-items: center;
         padding: 20px;
         height: auto;
         margin-top: 1em;
@@ -1267,8 +1234,9 @@ body {
 
     .hero__image {
         width: 100%;
-        height: 60vh;
-        margin-bottom: 2em;
+        height: auto;
+        max-height: 60vh;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1276,9 +1244,15 @@ body {
 
     .hero__image img {
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: contain;
         object-position: center;
+    }
+
+    .hero__content {
+        padding: 20px;
+        text-align: center;
+        width: 100%;
     }
 
     .hero__title {
@@ -1294,57 +1268,62 @@ body {
     }
 
     .hero__cta {
-        font-size: 1.4em;
+        font-size: 1.2em;
         padding: 15px 30px;
-        margin: 2em 0;
+        margin: 1.5em 0;
+        display: inline-block;
+        text-align: center;
     }
 
-    /* ====== Secciones Generales ====== */
+    /* Secciones */
     .section_banner {
-        padding: 30px;
+        padding: 20px;
+        text-align: center;
     }
 
-    .section2, .section3, .torneos__container {
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        align-items: center;
+    }
+
+    .section2__image2 {
+        width: 90%;
+        text-align: center;
+    }
+
+    .section3 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .torneos__container {
         display: flex;
         flex-direction: column;
         gap: 2em;
     }
 
-    /* Torneos */
     .torneo {
         width: 100%;
-        max-width: none;
         padding: 2em;
+        text-align: center;
     }
 
-    .torneo__image {
-        width: 180px;
-        margin: 0 auto 1.5em;
-    }
-
-    .torneo__title {
-        font-size: 2rem;
-        margin-bottom: 1em;
-    }
-
-    .torneo__description {
-        font-size: 1.6rem;
-        margin-bottom: 1.5em;
-    }
-
-    /* ====== Footer ====== */
+    /* Pie de página */
     .footer__container {
         display: flex;
         flex-direction: column;
         text-align: center;
-        align-items: center;
+    }
+
+    .footer__nav {
+        grid-template-columns: 1fr;
+        gap: 1em;
     }
 
     .footer__list {
         text-align: center;
-    }
-
-    .footer__item {
-        margin-bottom: 0.5em;
     }
 }
