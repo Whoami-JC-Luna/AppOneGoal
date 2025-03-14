@@ -40,7 +40,7 @@
         "hero"
         "main"
         "footer";
-    grid-template-rows: auto 1fr auto; 
+    grid-template-rows: auto 1fr auto auto; 
     min-height: 180vh;
     
     background-image: url('/img/background.png');
@@ -941,6 +941,9 @@ section, .hero, .torneos, .section_banner, .section2, .section3, .banner_end, .C
       transform: translateY(0);
   }
 
+
+
+
   /* Menú hamburguesa */
   .menu-toggle {
       display: flex;
@@ -1049,4 +1052,29 @@ section, .hero, .torneos, .section_banner, .section2, .section3, .banner_end, .C
       padding: 0.5rem;
       font-size: 1.2rem;
   }
+
+
+    /* Footer */
+    .footer {
+      margin-top: 3rem; /* Ajusta según sea necesario */
+  }
+ 
+  .footer__container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+  }
+
+  .footer__list {
+      text-align: center;
+  }
+
+  .footer__item {
+      margin-bottom: 0.5em;
+  }
+
+
+  
+
 }
