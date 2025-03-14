@@ -910,9 +910,6 @@ html {
 
 
 /*  MediaQUERYS */
-
-/* ====== MEDIA QUERIES PARA INDEX ====== */
-
 /* Móviles y Tablets (≤ 768px) */
 @media screen and (max-width: 768px) {
     /* Layout General */
