@@ -26,4 +26,4 @@ OneGoal es una moderna plataforma de apuestas deportivas diseñada para ofrecer 
 En desarrollo activo, con nuevas características y mejoras siendo implementadas regularmente.
 
 ---
-Desarrollado con ❤️ por Juan Carlos Luna ,Corlos Ortega y Omar Ortez
+Desarrollado con ❤️ por Juan Carlos Luna ,Carlos Ortega y Omar Ortez
