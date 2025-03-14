@@ -71,7 +71,7 @@ body {
 
 
 html {
-    font-size: 60%; /* 1rem = 10px */
+    font-size: 100%; /* 1rem = 10px */
   }
   
 
@@ -923,6 +923,11 @@ html {
         padding: 10px 15px;
         
     }
+
+    html {
+        font-size: 60%; /* 1rem = 10px */
+      }
+      
     
     .logo {
       max-width: 120px; /* Reduce el tamaño del logo */
