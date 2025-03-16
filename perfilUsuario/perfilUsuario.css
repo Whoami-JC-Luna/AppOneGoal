@@ -227,7 +227,6 @@ body {
 
 /* HEADER */
 .header {
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -236,26 +235,103 @@ body {
     background-color: var(--color-negro);
     box-shadow: 0px 4px 10px var(--color-shadow);
     padding: 20px 80px;
-    transition: transform 0.3s ease-in-out; /* Suaviza la animación */
 }
-
-/* Cuando haces scroll hacia abajo, el header se mueve */
-.header.scrolled {
-    transform: translateY(-10%);
-}
-
-
-
-
-
-
 
 .header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-   
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Estilos para el botón de hamburguesa - oculto en desktop */
+.nav__toggle {
+    display: none;
+}
+
+/* Media queries para tablets y móviles */
+@media (max-width: 1000px) {
+    .header {
+        padding: 8px 15px;
+    }
+
+    .header__container {
+        padding: 0;
+    }
+
+    .header__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__logo img {
+        height: 30px;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .nav__toggle {
+        display: block;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: var(--color-blanco);
+        background: none;
+        border: none;
+        padding: 0.3rem;
+        margin-left: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .nav__toggle:hover {
+        color: var(--color-verde);
+    }
+
+    /* Menú desplegable */
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-negro);
+        flex-direction: column;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav.active {
+        max-height: calc(100vh - 60px);
+        opacity: 1;
+        visibility: visible;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .header__logo img {
+        height: 25px;
+    }
+
+    .nav__toggle {
+        font-size: 1rem;
+    }
 }
 
 /* Sección del balance */
@@ -1148,40 +1224,202 @@ body {
             "banner_end"
             "footer";
         grid-template-rows: auto auto auto auto auto;
+        padding-top: 80px;
     }
 
     .trending {
-        margin: 20px 10px;
-        padding: 20px 10px;
+        margin: 20px 5px 5px 5px;
+        padding: 5px;
+    }
+
+    .trending__title {
+        font-size: 1.8rem;
+        margin: 15px auto;
+        padding: 8px;
+        width: 95%;
+        background-size: 100% 100%;
+        word-break: break-word;
+    }
+
+    .trending__banner {
+        margin: 10px auto;
+        width: 100%;
+    }
+
+    .trending__image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .trending__bet {
+        font-size: 1rem;
+        padding: 8px 16px;
+        bottom: 5%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .leagues__match {
+        width: 95%;
+        margin: 1em auto;
+        padding: 1em;
+    }
+
+    .chat__box {
+        width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .torneos__container {
+        padding: 10px;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .torneo {
+        width: 100px;
+        height: 100px;
     }
 
     .banner_end {
         margin: 1em auto;
+        width: 100%;
+    }
+
+    .banner_end__container {
+        width: 100%;
+        gap: 1em;
+        padding: 0 10px;
+    }
+
+    .banner_end__container img {
+        width: 100%;
+        margin: 5px auto;
     }
 
     .footer {
-        margin-top: 0;
+        margin-top: 10px;
+        padding: 15px 10px;
     }
 
     .footer__container {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
+    }
+
+    .footer__list {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer__link {
+        font-size: 1rem;
+    }
+
+    .footer__social {
+        margin: 10px 0;
+    }
+
+    .footer__bottom {
+        margin-top: 10px;
+        padding-top: 10px;
+        font-size: 0.8rem;
     }
 }
-@media (max-width: 1200px) {
 
-    .header__container {
-        max-width: 1303px;
+@media (max-width: 520px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .trending {
+        margin: 15px 5px 5px 5px;
+    }
+
+    .trending__title {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+
+    .trending__bet {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .leagues__teams {
         flex-wrap: wrap;
-        justify-content: none;
-        align-items: center;
+        gap: 8px;
+        padding: 8px;
     }
-    .header__logo {
-        margin: auto;
+
+    .leagues__logo {
+        width: 35px;
+        height: 35px;
     }
-    .nav {
-        margin: auto;
+
+    .team-name {
+        font-size: 11px;
+    }
+
+    .leagues__score {
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 5px 10px;
+    }
+
+    .torneos__container {
+        gap: 8px;
+    }
+
+    .torneo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .chat__usuarios img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .chat__box {
+        padding: 10px;
+    }
+
+    .community-card {
+        width: 95%;
+        padding: 15px;
+        margin: 8px auto;
+    }
+
+    .footer {
+        padding: 10px 5px;
+    }
+
+    .footer__logo img {
+        height: 40px;
+    }
+
+    .footer__list {
+        gap: 8px;
+    }
+
+    .footer__social {
+        margin: 8px 0;
+    }
+
+    .footer__social-link img {
+        height: 25px;
+    }
+
+    .footer__bottom {
+        margin-top: 8px;
+        padding-top: 8px;
     }
 }
 
