@@ -17,7 +17,6 @@ OneGoal es una moderna plataforma de apuestas deportivas diseñada para ofrecer 
 - HTML5
 - CSS3 (con Grid y Flexbox)
 - JavaScript
-- Diseño Mobile-First
 - Animaciones y transiciones personalizadas
 - Sistema de variables CSS para tema consistente
 
